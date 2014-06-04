@@ -27,7 +27,7 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 @property GCKMediaControlChannel *mediaControlChannel;
 @property GCKApplicationMetadata *applicationMetadata;
 @property GCKDevice *selectedDevice;
-@property float deviceVolume;
+
 @property bool deviceMuted;
 @property(nonatomic) VolumeChangeController *volumeChangeController;
 @property(nonatomic) NSArray *idleStateToolbarButtons;
@@ -151,6 +151,10 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
   }
 }
 
+- (void)setDeviceVolume:(float)deviceVolume {
+  [self.deviceManager setVolume:deviceVolume];
+}
+
 - (void)changeVolumeIncrease:(BOOL)goingUp {
   float idealVolume = self.deviceVolume + (goingUp ? 0.1 : -0.1);
   idealVolume = MIN(1.0, MAX(0.0, idealVolume));
@@ -271,8 +275,13 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
     volumeDidChangeToLevel:(float)volumeLevel
                    isMuted:(BOOL)isMuted {
   NSLog(@"New volume level of %f reported!", volumeLevel);
-  self.deviceVolume = volumeLevel;
+  _deviceVolume = volumeLevel;
   self.deviceMuted = isMuted;
+
+  // Fire off a notification, so no matter what controller we are in, we can show the volume
+  // slider
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"Volume changed" object:self];
+
 }
 
 #pragma mark - GCKDeviceScannerListener

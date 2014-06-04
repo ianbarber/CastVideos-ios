@@ -25,6 +25,8 @@
 /** The media object being played on Chromecast device. Set this before presenting the view. */
 @property(strong, nonatomic) Media* mediaToPlay;
 
+@property(strong, nonatomic) IBOutlet UISlider *volumeSlider;
+
 /** The media object and when to start playing on Chromecast device. Set this before presenting the view. */
 - (void)setMediaToPlay:(Media*)newMedia withStartingTime:(NSTimeInterval)startTime;
 

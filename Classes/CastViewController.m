@@ -36,9 +36,12 @@
 @property(nonatomic) UISlider* slider;
 @property(nonatomic) NSArray* playToolbar;
 @property(nonatomic) NSArray* pauseToolbar;
+@property BOOL isManualVolumeChange;
+
 @end
 
 @implementation CastViewController
+
 
 - (id)initWithCoder:(NSCoder*)decoder {
   self = [super initWithCoder:decoder];
@@ -64,6 +67,38 @@
   self.castingToLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Casting to %@", nil),
       _chromecastController.deviceName];
   self.mediaTitleLabel.text = self.mediaToPlay.title;
+
+  self.volumeSlider.minimumValue = 0;
+  self.volumeSlider.maximumValue = 1.0;
+  [self.volumeSlider addTarget:self
+                        action:@selector(sliderValueChanged:)
+              forControlEvents:UIControlEventValueChanged];
+
+  _isManualVolumeChange = NO;
+
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(receivedVolumeChangedNotification:)
+                                               name:@"Volume changed"
+                                             object:_chromecastController];
+}
+
+- (void)receivedVolumeChangedNotification:(NSNotification *) notification {
+    if(!_isManualVolumeChange) {
+      ChromecastDeviceController *deviceController = (ChromecastDeviceController *) notification.object;
+      NSLog(@"Got volume changed notification: %g", deviceController.deviceVolume);
+      self.volumeSlider.value = _chromecastController.deviceVolume;
+    }
+}
+
+- (IBAction)sliderValueChanged:(id)sender {
+    // Essentially a fake lock to prevent us from being stuck in an endless loop (volume change
+    // triggers notification, triggers UI change, triggers volume change ...
+    // This method is not foolproof (not thread safe), but for most use cases *should* be safe
+    // enough.
+    _isManualVolumeChange = YES;
+    NSLog(@"Got new slider value: %g", self.slider.value);
+    _chromecastController.deviceVolume = self.slider.value;
+    _isManualVolumeChange = NO;
 }
 
 - (void)didReceiveMemoryWarning {
