@@ -29,6 +29,7 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 @property GCKDevice *selectedDevice;
 
 @property bool deviceMuted;
+@property bool isReconnecting;
 @property(nonatomic) VolumeChangeController *volumeChangeController;
 @property(nonatomic) NSArray *idleStateToolbarButtons;
 @property(nonatomic) NSArray *playStateToolbarButtons;
@@ -42,6 +43,7 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 @implementation ChromecastDeviceController
 
 - (id)init {
+  self.isReconnecting = NO;
   return [self initWithFeatures:ChromecastControllerFeaturesNone];
 }
 
@@ -193,7 +195,13 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 - (void)deviceManagerDidConnect:(GCKDeviceManager *)deviceManager {
   NSLog(@"connected!!");
 
-  [self.deviceManager launchApplication:kReceiverAppID];
+  if(!self.isReconnecting) {
+    [self.deviceManager launchApplication:kReceiverAppID];
+  } else {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString* lastSessionID = [defaults valueForKey:@"lastSessionID"];
+    [self.deviceManager joinApplication:kReceiverAppID sessionID:lastSessionID];
+  }
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
@@ -202,6 +210,7 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
             launchedApplication:(BOOL)launchedApplication {
 
   NSLog(@"application has launched");
+  self.isReconnecting = NO;
   self.mediaControlChannel = [[GCKMediaControlChannel alloc] init];
   self.mediaControlChannel.delegate = self;
   [self.deviceManager addChannel:self.mediaControlChannel];
@@ -218,11 +227,23 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
   if (_features & ChromecastControllerFeatureHWVolumeControl) {
     [self.volumeChangeController captureVolumeButtons];
   }
+
+  // Store sessionID in case of restart
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject:sessionID forKey:@"lastSessionID"];
+  [defaults setObject:[self.selectedDevice deviceID] forKey:@"lastDeviceID"];
+  [defaults synchronize];
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
-    didFailToConnectToApplicationWithError:(NSError *)error {
-  [self showError:error];
+  didFailToConnectToApplicationWithError:(NSError *)error {
+  if(self.isReconnecting && [error code] == GCKErrorCodeApplicationNotRunning) {
+    // Expected error when unable to reconnect to previous session after another
+    // application has been running
+    self.isReconnecting = false;
+  } else {
+    [self showError:error];
+  }
 
   [self deviceDisconnected];
   [self updateCastIconButtonStates];
@@ -264,6 +285,11 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
   if ([self.delegate respondsToSelector:@selector(didDisconnect)]) {
     [self.delegate didDisconnect];
   }
+
+  // Remove previously stored deviceID
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults removeObjectForKey:@"lastDeviceID"];
+  [defaults synchronize];
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
@@ -286,7 +312,14 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 
 #pragma mark - GCKDeviceScannerListener
 - (void)deviceDidComeOnline:(GCKDevice *)device {
-    NSLog(@"device found!! %@", device.friendlyName);
+  NSLog(@"device found!! %@", device.friendlyName);
+
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSString* lastDeviceID = [defaults objectForKey:@"lastDeviceID"];
+  if(lastDeviceID != nil && [[device deviceID] isEqualToString:lastDeviceID]){
+    self.isReconnecting = true;
+    [self connectToDevice:device];
+  }
 }
 
 - (void)deviceDidGoOffline:(GCKDevice *)device {
