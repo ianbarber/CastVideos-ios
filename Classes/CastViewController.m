@@ -70,6 +70,8 @@
 
   self.volumeSlider.minimumValue = 0;
   self.volumeSlider.maximumValue = 1.0;
+    self.volumeSlider.value = 0.5;
+    self.volumeSlider.continuous = NO;
   [self.volumeSlider addTarget:self
                         action:@selector(sliderValueChanged:)
               forControlEvents:UIControlEventValueChanged];
@@ -91,13 +93,14 @@
 }
 
 - (IBAction)sliderValueChanged:(id)sender {
+    UISlider *slider = (UISlider *) sender;
     // Essentially a fake lock to prevent us from being stuck in an endless loop (volume change
     // triggers notification, triggers UI change, triggers volume change ...
     // This method is not foolproof (not thread safe), but for most use cases *should* be safe
     // enough.
     _isManualVolumeChange = YES;
-    NSLog(@"Got new slider value: %g", self.slider.value);
-    _chromecastController.deviceVolume = self.slider.value;
+    NSLog(@"Got new slider value: %.2f", slider.value);
+    _chromecastController.deviceVolume = slider.value;
     _isManualVolumeChange = NO;
 }
 
