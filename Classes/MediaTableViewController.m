@@ -65,7 +65,13 @@
     [self.tableView reloadData];
   }];
 
-  CastInstructions *overlay = [[CastInstructions alloc] initWithNibName:@"CastInstructions" bundle:nil];
+  UIStoryboard *sb = [UIStoryboard storyboardWithName:
+                      [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
+                                               bundle:[NSBundle mainBundle]];
+
+  CastInstructions *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
+
+//  CastInstructions *overlay = [[CastInstructions alloc] initWithNibName:@"CastInstructions" bundle:nil];
   overlay.view.backgroundColor = [UIColor clearColor];
   overlay.modalPresentationStyle = UIModalPresentationCustom;
   overlay.transitioningDelegate = self;
