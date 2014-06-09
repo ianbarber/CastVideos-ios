@@ -50,9 +50,11 @@
       [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_castvideos.png"]];
 
   // Display cast icon in the right nav bar button, if we have devices.
-  if (_chromecastController.deviceScanner.devices.count > 0) {
+    // TODO recomment these in
+//  if (_chromecastController.deviceScanner.devices.count > 0) {
+
     self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-  }
+  //}
 
   // Asynchronously load the media json
   self.mediaList = [[MediaListModel alloc] init];
@@ -60,6 +62,7 @@
     self.title = self.mediaList.mediaTitle;
     [self.tableView reloadData];
   }];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

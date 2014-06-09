@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Base Navigation View Controller-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController toolbarHidden="NO" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="rS3-R9-Ivy" customClass="BaseNavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -164,7 +164,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
                 <exit id="EiA-UH-4E3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="459" y="64"/>
+            <point key="canvasLocation" x="456" y="65"/>
         </scene>
         <!--Local Player View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="898" y="64"/>
         </scene>
         <!--Device Table View Controller - Connect to-->
         <scene sceneID="dRw-hv-UVr">
@@ -401,7 +401,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2aK-Vl-c3F"/>
-        <segue reference="BYP-uC-I0y"/>
+        <segue reference="H08-Zb-dfr"/>
+        <segue reference="aqX-wX-tnU"/>
     </inferredMetricsTieBreakers>
 </document>
