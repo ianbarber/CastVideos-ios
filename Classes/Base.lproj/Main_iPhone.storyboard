@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--Cast Instructions-->
+        <!--Cast Instructions View Controller-->
         <scene sceneID="dm2-M5-sUU">
             <objects>
-                <viewController storyboardIdentifier="CastInstructions" id="n38-rt-U7p" customClass="CastInstructions" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CastInstructions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n38-rt-U7p" customClass="CastInstructionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="za2-Cb-4F0"/>
                         <viewControllerLayoutGuide type="bottom" id="MZ3-q3-ksA"/>
@@ -85,10 +85,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="overlayView" destination="Lzi-bG-zdd" id="dNB-np-nOR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaI-g5-DLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="795"/>
+            <point key="canvasLocation" x="220" y="714"/>
         </scene>
         <!--Cast View Controller-->
         <scene sceneID="u6e-mf-Khc">
@@ -464,7 +467,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aqX-wX-tnU"/>
-        <segue reference="H08-Zb-dfr"/>
+        <segue reference="90r-3M-ZWY"/>
+        <segue reference="2aK-Vl-c3F"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,7 +18,7 @@
 #import "SimpleImageFetcher.h"
 #import "Media.h"
 #import "MediaListModel.h"
-#import "CastInstructions.h"
+#import "CastInstructionsViewController.h"
 #import "SemiModalAnimatedTransition.h"
 
 @interface MediaTableViewController () {
@@ -69,15 +69,13 @@
                       [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
                                                bundle:[NSBundle mainBundle]];
 
-  CastInstructions *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
+  CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
 
 //  CastInstructions *overlay = [[CastInstructions alloc] initWithNibName:@"CastInstructions" bundle:nil];
   overlay.view.backgroundColor = [UIColor clearColor];
   overlay.modalPresentationStyle = UIModalPresentationCustom;
   overlay.transitioningDelegate = self;
-
   [self presentViewController:overlay animated:YES completion:nil];
-
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source

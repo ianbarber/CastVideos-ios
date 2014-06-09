@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CastInstructions : UIViewController
+@interface CastInstructionsViewController : UIViewController
+
+@property(nonatomic, strong) IBOutlet UIView *overlayView;
+- (IBAction)dismissOverlay:(id)sender;
 
 @end
