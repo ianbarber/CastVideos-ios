@@ -1,5 +1,5 @@
 //
-//  BaseNavigationViewController.h
+//  CastInstructions.h
 //  CastVideos
 //
 //  Created by Ikai Lan on 6/9/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseNavigationViewController : UINavigationController
+@interface CastInstructions : UIViewController
 
 @end

@@ -18,6 +18,8 @@
 #import "SimpleImageFetcher.h"
 #import "Media.h"
 #import "MediaListModel.h"
+#import "CastInstructions.h"
+#import "SemiModalAnimatedTransition.h"
 
 @interface MediaTableViewController () {
   __weak ChromecastDeviceController *_chromecastController;
@@ -63,6 +65,26 @@
     [self.tableView reloadData];
   }];
 
+  CastInstructions *overlay = [[CastInstructions alloc] initWithNibName:@"CastInstructions" bundle:nil];
+  overlay.view.backgroundColor = [UIColor clearColor];
+  overlay.modalPresentationStyle = UIModalPresentationCustom;
+  overlay.transitioningDelegate = self;
+
+  [self presentViewController:overlay animated:YES completion:nil];
+
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
+  semiModalAnimatedTransition.presenting = YES;
+  return semiModalAnimatedTransition;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
+  return semiModalAnimatedTransition;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
