@@ -71,7 +71,7 @@
 }
 
 - (void)moviePlayBackDidChange:(NSNotification *)notification {
-  NSLog(@"Movie playback state did change %d", _moviePlayer.playbackState);
+  NSLog(@"Movie playback state did change %d",(int) _moviePlayer.playbackState);
 }
 
 - (void)moviePlayBackDidFinish:(NSNotification *)notification {

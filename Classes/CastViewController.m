@@ -172,11 +172,11 @@
 // Little formatting option here
 
 - (NSString*)getFormattedTime:(NSTimeInterval)timeInSeconds {
-  NSInteger seconds = (NSInteger) round(timeInSeconds);
-  NSInteger hours = seconds / (60 * 60);
+  int seconds = round(timeInSeconds);
+  int hours = seconds / (60 * 60);
   seconds %= (60 * 60);
 
-  NSInteger minutes = seconds / 60;
+  int minutes = seconds / 60;
   seconds %= 60;
 
   if (hours > 0) {

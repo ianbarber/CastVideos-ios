@@ -63,7 +63,7 @@
 }
 
 - (int)numberOfMediaLoaded {
-  return [_medias count];
+  return (int)[_medias count];
 }
 
 - (Media *)mediaAtIndex:(int)index {

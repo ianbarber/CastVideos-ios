@@ -20,7 +20,8 @@
   NSFileManager *fileManager = [NSFileManager defaultManager];
 
   // We should really use a better hashing mechanism than this.
-  NSString *cacheFileName = [NSString stringWithFormat:@"%ul", [[urlToFetch absoluteString] hash]];
+  unsigned long hashid = [[urlToFetch absoluteString] hash];
+  NSString *cacheFileName = [NSString stringWithFormat:@"%lu", hashid];
   NSURL *cacheDirectory =
       [[[fileManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject]
           URLByAppendingPathComponent:@"thumbnails"];
