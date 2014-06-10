@@ -30,6 +30,8 @@
 
 @implementation MediaTableViewController
 
+NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
+
 - (id)initWithCoder:(NSCoder *)decoder {
   self = [super initWithCoder:decoder];
   if (self) {
@@ -70,14 +72,23 @@
 - (void) showCastIcon {
   self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
 
-  UIStoryboard *sb = [UIStoryboard storyboardWithName:
-                      [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
-                                               bundle:[NSBundle mainBundle]];
-  CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
-  overlay.view.backgroundColor = [UIColor clearColor];
-  overlay.modalPresentationStyle = UIModalPresentationCustom;
-  overlay.transitioningDelegate = self;
-  [self presentViewController:overlay animated:YES completion:nil];
+  // Only show this overlay to the user once
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
+
+  if(!hasSeenChromecastOverlay) {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:
+                        [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
+                                                 bundle:[NSBundle mainBundle]];
+    CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
+    overlay.view.backgroundColor = [UIColor clearColor];
+    overlay.modalPresentationStyle = UIModalPresentationCustom;
+    overlay.transitioningDelegate = self;
+    [self presentViewController:overlay animated:YES completion:nil];
+
+    [defaults setBool:true forKey:kHasSeenChromecastOverlay];
+    [defaults synchronize];
+  }
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
