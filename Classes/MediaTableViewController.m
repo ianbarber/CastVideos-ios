@@ -120,7 +120,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell =
       [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-  Media *media = [self.mediaList mediaAtIndex:indexPath.row];
+  Media *media = [self.mediaList mediaAtIndex:(int)indexPath.row];
 
   UILabel *mediaTitle = (UILabel *)[cell viewWithTag:1];
   mediaTitle.text = media.title;
@@ -154,7 +154,7 @@
   if ([[segue identifier] isEqualToString:@"castMedia"] ||
       [[segue identifier] isEqualToString:@"playMedia"]) {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    Media *media = [self.mediaList mediaAtIndex:indexPath.row];
+    Media *media = [self.mediaList mediaAtIndex:(int)indexPath.row];
     [[segue destinationViewController] setMediaToPlay:media];
   }
 }
