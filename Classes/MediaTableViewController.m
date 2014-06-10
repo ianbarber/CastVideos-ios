@@ -52,11 +52,10 @@
       [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_castvideos.png"]];
 
   // Display cast icon in the right nav bar button, if we have devices.
-    // TODO recomment these in
-//  if (_chromecastController.deviceScanner.devices.count > 0) {
+  if (_chromecastController.deviceScanner.devices.count > 0) {
 
     self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-  //}
+  }
 
   // Asynchronously load the media json
   self.mediaList = [[MediaListModel alloc] init];
@@ -68,10 +67,7 @@
   UIStoryboard *sb = [UIStoryboard storyboardWithName:
                       [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
                                                bundle:[NSBundle mainBundle]];
-
   CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
-
-//  CastInstructions *overlay = [[CastInstructions alloc] initWithNibName:@"CastInstructions" bundle:nil];
   overlay.view.backgroundColor = [UIColor clearColor];
   overlay.modalPresentationStyle = UIModalPresentationCustom;
   overlay.transitioningDelegate = self;
