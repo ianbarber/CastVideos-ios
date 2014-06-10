@@ -53,8 +53,7 @@
 
   // Display cast icon in the right nav bar button, if we have devices.
   if (_chromecastController.deviceScanner.devices.count > 0) {
-
-    self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
+    [self showCastIcon];
   }
 
   // Asynchronously load the media json
@@ -63,6 +62,13 @@
     self.title = self.mediaList.mediaTitle;
     [self.tableView reloadData];
   }];
+
+}
+
+// Show cast icon. If this is the first time the cast icon is appearing, show an overlay with
+// instructions highlighting the cast icon.
+- (void) showCastIcon {
+  self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
 
   UIStoryboard *sb = [UIStoryboard storyboardWithName:
                       [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
@@ -166,7 +172,7 @@
  */
 - (void)didDiscoverDeviceOnNetwork {
   // Add the chromecast icon if not present.
-  self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
+  [self showCastIcon];
 }
 
 /**
