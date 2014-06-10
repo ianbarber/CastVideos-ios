@@ -76,6 +76,7 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
 
+  hasSeenChromecastOverlay = false; // TODO remove before release, this is for debugging only
   if(!hasSeenChromecastOverlay) {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:
                         [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
