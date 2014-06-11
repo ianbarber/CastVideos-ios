@@ -30,6 +30,7 @@
 @property(weak, nonatomic) IBOutlet UILabel* mediaTitleLabel;
 @property(weak, nonatomic) IBOutlet UIActivityIndicatorView* castActivityIndicator;
 @property(weak, nonatomic) NSTimer* updateStreamTimer;
+@property(weak, nonatomic) NSTimer* fadeVolumeControlTimer;
 
 @property(nonatomic) UIBarButtonItem* currTime;
 @property(nonatomic) UIBarButtonItem* totalTime;
@@ -154,9 +155,16 @@
                        NSLog(@"Done!");
                      }];
 
-    // Set a timer to make this disappear
-    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(fadeVolumeSlider:) userInfo:nil repeats:NO];
   }
+  // Do this so if a user taps the screen or plays with the volume slider, it resets the timer
+  // for fading the volume controls
+  if(self.fadeVolumeControlTimer != nil) {
+    [self.fadeVolumeControlTimer invalidate];
+  }
+  self.fadeVolumeControlTimer = [NSTimer scheduledTimerWithTimeInterval:3.0
+                                                                 target:self
+                                                               selector:@selector(fadeVolumeSlider:)
+                                                               userInfo:nil repeats:NO];
 
 
 }
