@@ -106,6 +106,7 @@
                         <outlet property="mediaTitleLabel" destination="Ngf-jI-Hf4" id="lfU-aC-gz9"/>
                         <outlet property="thumbnailImage" destination="Y0R-X2-KdV" id="erz-zC-jW3"/>
                         <outlet property="volumeControls" destination="QOh-bt-4Kg" id="GiE-yr-vzR"/>
+                        <outlet property="volumeSlider" destination="5tW-vv-68J" id="GBY-dk-Adt"/>
                         <segue destination="o3F-oB-aD8" kind="modal" identifier="listDevices" modalPresentationStyle="formSheet" id="3cu-ej-St3"/>
                     </connections>
                 </viewController>
@@ -389,9 +390,95 @@
             </objects>
             <point key="canvasLocation" x="3082" y="139"/>
         </scene>
+        <!--Cast Instructions View Controller-->
+        <scene sceneID="T0g-HY-PrK">
+            <objects>
+                <viewController storyboardIdentifier="CastInstructions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sei-Rb-jd2" customClass="CastInstructionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZGt-YD-Pop"/>
+                        <viewControllerLayoutGuide type="bottom" id="yad-pY-egm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Atl-kB-oNd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-Rk-W7h">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-kt-Wxg">
+                                        <rect key="frame" x="100" y="73" width="194" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.36470589040000001" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-LA-iru">
+                                        <rect key="frame" x="40" y="164" width="241" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.36862745879999997" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="241" id="SIv-L9-qnX"/>
+                                            <constraint firstAttribute="height" constant="155" id="lxD-gO-lBm"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Tap the Cast icon to select a device to cast video to.">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-WM-yQj">
+                                        <rect key="frame" x="168" y="41" width="92" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="cdW-LA-iru" firstAttribute="leading" secondItem="hFi-zn-apu" secondAttribute="leading" constant="40" id="Lsb-gV-wYq"/>
+                                    <constraint firstAttribute="trailing" secondItem="VSF-kt-Wxg" secondAttribute="trailing" constant="26" id="T4P-ix-lST"/>
+                                    <constraint firstAttribute="bottom" secondItem="cdW-LA-iru" secondAttribute="bottom" constant="92" id="pDt-wm-TtR"/>
+                                    <constraint firstAttribute="trailing" secondItem="aZS-WM-yQj" secondAttribute="trailing" constant="60" id="x9o-wF-cG8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hFi-zn-apu" secondAttribute="trailing" id="0WS-6Y-uA2"/>
+                            <constraint firstItem="tSN-Rk-W7h" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="Ccg-aI-zVQ"/>
+                            <constraint firstItem="tSN-Rk-W7h" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="N2w-7N-fv2"/>
+                            <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="tSN-Rk-W7h" secondAttribute="bottom" id="QhX-eH-o50"/>
+                            <constraint firstAttribute="trailing" secondItem="tSN-Rk-W7h" secondAttribute="trailing" id="aSo-wf-05V"/>
+                            <constraint firstItem="hFi-zn-apu" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="bVu-cU-Gsp"/>
+                            <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="bottom" id="nJP-HH-naV"/>
+                            <constraint firstItem="hFi-zn-apu" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="vFe-rU-ihh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="overlayView" destination="hFi-zn-apu" id="lHa-Az-EKE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0Q-xN-QqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200" y="1418"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
+        <image name="overlay-arrow.png" width="126" height="58"/>
         <image name="play_black.png" width="49" height="49"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
