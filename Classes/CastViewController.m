@@ -78,13 +78,13 @@
               forControlEvents:UIControlEventValueChanged];
 
   _isManualVolumeChange = NO;
-
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(receivedVolumeChangedNotification:)
                                                name:@"Volume changed"
                                              object:_chromecastController];
 
   UIButton *transparencyButton = [[UIButton alloc] initWithFrame:self.view.bounds];
+  transparencyButton.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
   transparencyButton.backgroundColor = [UIColor clearColor];
   [self.view insertSubview:transparencyButton aboveSubview:self.thumbnailImage];
   [transparencyButton addTarget:self action:@selector(showVolumeSlider:) forControlEvents:UIControlEventTouchUpInside];

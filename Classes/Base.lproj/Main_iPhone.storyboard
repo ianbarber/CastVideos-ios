@@ -127,18 +127,18 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHE-7a-Ifx" userLabel="Volume controls">
-                                <rect key="frame" x="80" y="82" width="160" height="106"/>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHE-7a-Ifx" userLabel="Volume controls">
+                                <rect key="frame" x="80" y="87" width="160" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xUT-ET-JQe">
+                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xUT-ET-JQe">
                                         <rect key="frame" x="-38" y="44" width="236" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="showVolumeSlider:" destination="0Wa-zZ-cKY" eventType="valueChanged" id="mIS-cx-qf0"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-cs-oj8">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqf-cs-oj8">
                                         <rect key="frame" x="52" y="0.0" width="57" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -147,13 +147,23 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="106" id="6wi-Xr-E7I"/>
+                                    <constraint firstItem="xUT-ET-JQe" firstAttribute="leading" secondItem="sHE-7a-Ifx" secondAttribute="leading" constant="10" id="HgO-Tv-AJv"/>
+                                    <constraint firstAttribute="trailing" secondItem="xUT-ET-JQe" secondAttribute="trailing" constant="10" id="Nhx-rt-aRl"/>
+                                    <constraint firstAttribute="width" constant="160" id="Ou6-XT-Vzh"/>
+                                    <constraint firstAttribute="centerX" secondItem="eqf-cs-oj8" secondAttribute="centerX" id="s53-Hh-sW9"/>
+                                    <constraint firstAttribute="centerX" secondItem="xUT-ET-JQe" secondAttribute="centerX" id="tQu-k1-ObP"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gJl-zs-Kw9" firstAttribute="top" secondItem="Cmh-ea-aVI" secondAttribute="bottom" constant="8" symbolic="YES" id="76R-Oe-IBu"/>
                             <constraint firstItem="ma0-x3-mBq" firstAttribute="top" secondItem="Uau-mR-0kl" secondAttribute="top" id="CR9-hR-GDn"/>
+                            <constraint firstItem="sHE-7a-Ifx" firstAttribute="top" secondItem="cFL-7T-YrE" secondAttribute="bottom" constant="23" id="CWT-8f-OSZ"/>
                             <constraint firstItem="gJl-zs-Kw9" firstAttribute="leading" secondItem="o7v-vW-Xai" secondAttribute="trailing" constant="8" symbolic="YES" id="Em8-Yh-aD1"/>
+                            <constraint firstItem="sHE-7a-Ifx" firstAttribute="top" secondItem="cFL-7T-YrE" secondAttribute="bottom" constant="23" id="F66-RB-AAC"/>
                             <constraint firstItem="2mz-kJ-dwu" firstAttribute="top" secondItem="o7v-vW-Xai" secondAttribute="bottom" constant="10" id="Gcs-7Q-em5"/>
                             <constraint firstAttribute="trailing" secondItem="Cmh-ea-aVI" secondAttribute="trailing" constant="20" id="NxI-kF-yJr"/>
                             <constraint firstItem="gJl-zs-Kw9" firstAttribute="centerX" secondItem="ma0-x3-mBq" secondAttribute="centerX" id="ODe-VA-Ki9"/>
@@ -163,6 +173,7 @@
                             <constraint firstItem="ma0-x3-mBq" firstAttribute="leading" secondItem="Uau-mR-0kl" secondAttribute="leading" id="hNW-qx-Ivx"/>
                             <constraint firstItem="gJl-zs-Kw9" firstAttribute="centerX" secondItem="Uau-mR-0kl" secondAttribute="centerX" id="jjv-qC-Xcd"/>
                             <constraint firstItem="Cmh-ea-aVI" firstAttribute="leading" secondItem="Uau-mR-0kl" secondAttribute="leading" constant="20" symbolic="YES" id="wiN-eW-oMe"/>
+                            <constraint firstAttribute="centerX" secondItem="sHE-7a-Ifx" secondAttribute="centerX" id="yR6-82-xSf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VA2-gs-4Kz"/>
