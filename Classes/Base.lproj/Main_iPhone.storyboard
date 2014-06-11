@@ -172,8 +172,10 @@
                                     <constraint firstItem="xUT-ET-JQe" firstAttribute="leading" secondItem="sHE-7a-Ifx" secondAttribute="leading" constant="10" id="HgO-Tv-AJv"/>
                                     <constraint firstAttribute="trailing" secondItem="xUT-ET-JQe" secondAttribute="trailing" constant="10" id="Nhx-rt-aRl"/>
                                     <constraint firstAttribute="width" constant="160" id="Ou6-XT-Vzh"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xUT-ET-JQe" secondAttribute="trailing" constant="5" id="hnt-AH-oev"/>
                                     <constraint firstAttribute="centerX" secondItem="eqf-cs-oj8" secondAttribute="centerX" id="s53-Hh-sW9"/>
                                     <constraint firstAttribute="centerX" secondItem="xUT-ET-JQe" secondAttribute="centerX" id="tQu-k1-ObP"/>
+                                    <constraint firstItem="xUT-ET-JQe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sHE-7a-Ifx" secondAttribute="leading" constant="5" id="vl1-xr-7Gy"/>
                                 </constraints>
                             </view>
                         </subviews>
