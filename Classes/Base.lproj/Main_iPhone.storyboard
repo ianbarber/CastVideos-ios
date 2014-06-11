@@ -40,24 +40,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Nw-ll-tcJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y54-UE-Pgo" userLabel="Overlay Container - make sure this is on top">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byA-ko-1b5">
-                                        <rect key="frame" x="124" y="73" width="194" height="83"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byA-ko-1b5">
+                                        <rect key="frame" x="100" y="73" width="194" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.436743041" green="1" blue="0.21395683530000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="qb7-Mi-quC">
-                                        <rect key="frame" x="77" y="239" width="241" height="155"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="qb7-Mi-quC">
+                                        <rect key="frame" x="40" y="233" width="241" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.436743041" green="1" blue="0.21395683530000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                         </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="241" id="Hgv-Ou-VmI"/>
+                                            <constraint firstAttribute="height" constant="155" id="jaE-Ll-wmt"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Detected a Chromecast! To use Chromecast, type the Chromecast icon to select your device. Once your device has been selected, you will be able to play videos from your TV!</string>
@@ -70,19 +80,29 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="zXO-hR-stU">
-                                        <rect key="frame" x="206" y="41" width="92" height="31"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="zXO-hR-stU">
+                                        <rect key="frame" x="168" y="41" width="92" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qb7-Mi-quC" firstAttribute="leading" secondItem="y54-UE-Pgo" secondAttribute="leading" constant="40" id="10d-ri-JXs"/>
+                                    <constraint firstAttribute="trailing" secondItem="zXO-hR-stU" secondAttribute="trailing" constant="60" id="a93-0w-fZj"/>
+                                    <constraint firstAttribute="trailing" secondItem="byA-ko-1b5" secondAttribute="trailing" constant="26" id="dg4-g9-nQh"/>
+                                    <constraint firstAttribute="bottom" secondItem="qb7-Mi-quC" secondAttribute="bottom" constant="92" id="zVB-aE-wrQ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="J7U-nm-QzQ" firstAttribute="top" secondItem="y54-UE-Pgo" secondAttribute="bottom" id="S7F-eJ-mRC"/>
+                            <constraint firstItem="J7U-nm-QzQ" firstAttribute="top" secondItem="8Nw-ll-tcJ" secondAttribute="bottom" id="T7f-EW-9so"/>
                             <constraint firstItem="y54-UE-Pgo" firstAttribute="top" secondItem="6oP-F4-xIf" secondAttribute="top" id="UHK-aC-VKv"/>
+                            <constraint firstItem="8Nw-ll-tcJ" firstAttribute="leading" secondItem="6oP-F4-xIf" secondAttribute="leading" id="VdA-9h-Ob0"/>
+                            <constraint firstItem="8Nw-ll-tcJ" firstAttribute="top" secondItem="6oP-F4-xIf" secondAttribute="top" id="YhA-kI-yXR"/>
                             <constraint firstItem="y54-UE-Pgo" firstAttribute="leading" secondItem="6oP-F4-xIf" secondAttribute="leading" id="ZaG-eG-wAa"/>
+                            <constraint firstAttribute="trailing" secondItem="8Nw-ll-tcJ" secondAttribute="trailing" id="mYp-AE-zib"/>
                             <constraint firstAttribute="trailing" secondItem="y54-UE-Pgo" secondAttribute="trailing" id="q7o-NZ-TjP"/>
                         </constraints>
                     </view>
