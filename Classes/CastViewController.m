@@ -70,8 +70,8 @@
 
   self.volumeSlider.minimumValue = 0;
   self.volumeSlider.maximumValue = 1.0;
-    self.volumeSlider.value = 0.5;
-    self.volumeSlider.continuous = NO;
+  self.volumeSlider.value = 0.5;
+  self.volumeSlider.continuous = NO;
   [self.volumeSlider addTarget:self
                         action:@selector(sliderValueChanged:)
               forControlEvents:UIControlEventValueChanged];
@@ -82,6 +82,12 @@
                                            selector:@selector(receivedVolumeChangedNotification:)
                                                name:@"Volume changed"
                                              object:_chromecastController];
+
+  UIButton *transparencyButton = [[UIButton alloc] initWithFrame:self.view.bounds];
+  transparencyButton.backgroundColor = [UIColor clearColor];
+  [self.view insertSubview:transparencyButton aboveSubview:self.thumbnailImage];
+  [transparencyButton addTarget:self action:@selector(showVolumeSlider:) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
 - (void)receivedVolumeChangedNotification:(NSNotification *) notification {
@@ -134,6 +140,39 @@
   self.navigationController.toolbarHidden = YES;
   _readyToShowInterface = NO;
 }
+
+- (IBAction)showVolumeSlider:(id)sender {
+  if(self.volumeControls.hidden) {
+    self.volumeControls.hidden = NO;
+    [self.volumeControls setAlpha:0];
+
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                       self.volumeControls.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished){
+                       NSLog(@"Done!");
+                     }];
+
+    // Set a timer to make this disappear
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(fadeVolumeSlider:) userInfo:nil repeats:NO];
+  }
+
+
+}
+
+- (void)fadeVolumeSlider:(NSTimer *)timer {
+  [self.volumeControls setAlpha:1.0];
+
+  [UIView animateWithDuration:0.5
+                   animations:^{
+                     self.volumeControls.alpha = 0.0;
+                   }
+                   completion:^(BOOL finished){
+                     self.volumeControls.hidden = YES;
+                   }];
+}
+
 
 - (void)mediaNowPlaying {
   _readyToShowInterface = YES;
