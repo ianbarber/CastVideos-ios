@@ -18,10 +18,10 @@
   [super viewDidLoad];
 
   UIButton *transparencyButton = [[UIButton alloc] initWithFrame:self.view.bounds];
+  transparencyButton.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
   transparencyButton.backgroundColor = [UIColor clearColor];
   [self.view insertSubview:transparencyButton aboveSubview:self.overlayView];
   [transparencyButton addTarget:self action:@selector(dismissOverlay:) forControlEvents:UIControlEventTouchUpInside];
-
 }
 
 -(IBAction)dismissOverlay:(id)sender {

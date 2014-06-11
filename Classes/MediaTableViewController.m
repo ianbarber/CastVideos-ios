@@ -84,6 +84,8 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
     CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
     overlay.view.backgroundColor = [UIColor clearColor];
     overlay.modalPresentationStyle = UIModalPresentationCustom;
+    overlay.view.bounds = self.view.bounds;
+    overlay.view.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
     overlay.transitioningDelegate = self;
     [self presentViewController:overlay animated:YES completion:nil];
 

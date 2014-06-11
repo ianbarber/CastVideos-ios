@@ -33,30 +33,25 @@
             <objects>
                 <viewController storyboardIdentifier="CastInstructions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n38-rt-U7p" customClass="CastInstructionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="za2-Cb-4F0"/>
-                        <viewControllerLayoutGuide type="bottom" id="MZ3-q3-ksA"/>
+                        <viewControllerLayoutGuide type="top" id="0OW-zY-CQR"/>
+                        <viewControllerLayoutGuide type="bottom" id="J7U-nm-QzQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="agJ-fJ-6cO">
+                    <view key="view" contentMode="scaleToFill" id="6oP-F4-xIf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view autoresizesSubviews="NO" alpha="0.5" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-rC-ymT" userLabel="Lighbox View">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lzi-bG-zdd" userLabel="Overlay Container - make sure this is on top">
-                                <rect key="frame" x="-37" y="0.0" width="394" height="568"/>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y54-UE-Pgo" userLabel="Overlay Container - make sure this is on top">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ4-ga-BUP">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byA-ko-1b5">
                                         <rect key="frame" x="124" y="73" width="194" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.436743041" green="1" blue="0.21395683530000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="224-nd-Rcs">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="qb7-Mi-quC">
                                         <rect key="frame" x="77" y="239" width="241" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.436743041" green="1" blue="0.21395683530000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,18 +70,24 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-jw-DBO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="zXO-hR-stU">
                                         <rect key="frame" x="206" y="41" width="92" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="J7U-nm-QzQ" firstAttribute="top" secondItem="y54-UE-Pgo" secondAttribute="bottom" id="S7F-eJ-mRC"/>
+                            <constraint firstItem="y54-UE-Pgo" firstAttribute="top" secondItem="6oP-F4-xIf" secondAttribute="top" id="UHK-aC-VKv"/>
+                            <constraint firstItem="y54-UE-Pgo" firstAttribute="leading" secondItem="6oP-F4-xIf" secondAttribute="leading" id="ZaG-eG-wAa"/>
+                            <constraint firstAttribute="trailing" secondItem="y54-UE-Pgo" secondAttribute="trailing" id="q7o-NZ-TjP"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="overlayView" destination="Lzi-bG-zdd" id="dNB-np-nOR"/>
+                        <outlet property="overlayView" destination="y54-UE-Pgo" id="oZ2-a8-RQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaI-g5-DLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
