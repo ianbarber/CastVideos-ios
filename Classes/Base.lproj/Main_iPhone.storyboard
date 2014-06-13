@@ -447,44 +447,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="lpS-SZ-Eif">
-                                        <rect key="frame" x="37" y="217" width="241" height="224"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.36862745879999997" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
-                                        </accessibility>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bg_warm_start.png" translatesAutoresizingMaskIntoConstraints="NO" id="VPD-hB-Umv">
+                                        <rect key="frame" x="17" y="31" width="283" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="241" id="3wR-xf-65m"/>
-                                            <constraint firstAttribute="height" constant="224" id="b3g-sa-KHd"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="241" id="btj-pg-SZf"/>
+                                            <constraint firstAttribute="width" constant="283" id="sk3-N3-YXo"/>
+                                            <constraint firstAttribute="height" constant="175" id="tGh-2l-Qr0"/>
                                         </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="3o1-JE-Hst">
+                                        <rect key="frame" x="39" y="95" width="238" height="71"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Tap the Cast icon to select a device to cast video to.">
+                                            <fragment content="Click here to begin casting to your Chromecast!">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="24" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
+                                                    <font key="NSFont" size="18" name="MarkerFelt-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
-                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-H8-vlR">
-                                        <rect key="frame" x="186" y="33" width="92" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="92" id="ICE-9B-p7c"/>
-                                            <constraint firstAttribute="height" constant="31" id="W8J-gs-hyD"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="lpS-SZ-Eif" secondAttribute="bottom" constant="39" id="Yst-Ps-tM6"/>
-                                    <constraint firstItem="lpS-SZ-Eif" firstAttribute="leading" secondItem="amO-Et-w9R" secondAttribute="leading" constant="37" id="bak-Rz-Qqe"/>
-                                    <constraint firstAttribute="trailing" secondItem="lpS-SZ-Eif" secondAttribute="trailing" constant="42" id="tKD-j7-Ey9"/>
-                                    <constraint firstAttribute="trailing" secondItem="oUw-H8-vlR" secondAttribute="trailing" constant="42" id="zXL-S2-IW2"/>
+                                    <constraint firstItem="VPD-hB-Umv" firstAttribute="centerX" secondItem="3o1-JE-Hst" secondAttribute="centerX" id="GZs-um-tuN"/>
+                                    <constraint firstAttribute="trailing" secondItem="VPD-hB-Umv" secondAttribute="trailing" constant="20" id="i6Z-lq-75h"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -517,8 +508,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_warm_start.png" width="306" height="309"/>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
-        <image name="overlay-arrow.png" width="126" height="58"/>
         <image name="play_black.png" width="49" height="49"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
