@@ -447,17 +447,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3d-un-tXj">
-                                        <rect key="frame" x="84" y="64" width="194" height="83"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.36470589040000001" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="194" id="Uqy-wC-ugK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="lpS-SZ-Eif">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="lpS-SZ-Eif">
                                         <rect key="frame" x="37" y="217" width="241" height="224"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.36862745879999997" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
@@ -467,17 +457,18 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="241" id="3wR-xf-65m"/>
                                             <constraint firstAttribute="height" constant="224" id="b3g-sa-KHd"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="241" id="btj-pg-SZf"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Tap the Cast icon to select a device to cast video to.">
                                                 <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="24" name="MarkerFelt-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
-                                        <nil key="highlightedColor"/>
+                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-H8-vlR">
                                         <rect key="frame" x="186" y="33" width="92" height="31"/>
@@ -491,7 +482,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="lpS-SZ-Eif" secondAttribute="bottom" constant="39" id="Yst-Ps-tM6"/>
-                                    <constraint firstAttribute="trailing" secondItem="O3d-un-tXj" secondAttribute="trailing" constant="42" id="icd-0B-ay1"/>
+                                    <constraint firstItem="lpS-SZ-Eif" firstAttribute="leading" secondItem="amO-Et-w9R" secondAttribute="leading" constant="37" id="bak-Rz-Qqe"/>
+                                    <constraint firstAttribute="trailing" secondItem="lpS-SZ-Eif" secondAttribute="trailing" constant="42" id="tKD-j7-Ey9"/>
                                     <constraint firstAttribute="trailing" secondItem="oUw-H8-vlR" secondAttribute="trailing" constant="42" id="zXL-S2-IW2"/>
                                 </constraints>
                             </view>
@@ -535,7 +527,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BYP-uC-I0y"/>
         <segue reference="2aK-Vl-c3F"/>
+        <segue reference="90r-3M-ZWY"/>
     </inferredMetricsTieBreakers>
 </document>
