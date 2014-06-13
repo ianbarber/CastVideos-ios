@@ -406,80 +406,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" alpha="0.40000000596046448" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-Rk-W7h" userLabel="Grey overlay">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-n6-5mp" userLabel="Button - full screen dismiss">
+                                <rect key="frame" x="-3" y="-2" width="774" height="1029"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissOverlay:" destination="Sei-Rb-jd2" eventType="touchUpInside" id="5d5-IW-DaM"/>
+                                </connections>
+                            </button>
+                            <view opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-Rk-W7h" userLabel="Grey overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
+                            <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-kt-Wxg">
-                                        <rect key="frame" x="475" y="73" width="194" height="83"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.36470589040000001" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_warm_start.png" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-gO-chA">
+                                        <rect key="frame" x="459" y="29" width="283" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="194" id="rX5-7Z-qIb"/>
+                                            <constraint firstAttribute="height" constant="175" id="6yx-U2-O8K"/>
+                                            <constraint firstAttribute="width" constant="283" id="BuX-EE-CFv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-LA-iru">
-                                        <rect key="frame" x="428" y="196" width="241" height="224"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="Jbw-Ki-aEY">
+                                        <rect key="frame" x="481" y="81" width="238" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.36862745879999997" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="241" id="SIv-L9-qnX"/>
-                                            <constraint firstAttribute="height" constant="224" id="lxD-gO-lBm"/>
-                                        </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Tap the Cast icon to select a device to cast video to.">
+                                            <fragment content="Click here to begin casting to your Chromecast!">
                                                 <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="18" name="MarkerFelt-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-WM-yQj">
-                                        <rect key="frame" x="577" y="42" width="92" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="BYe-DS-kGh"/>
-                                            <constraint firstAttribute="width" constant="92" id="eFT-vN-S5A"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-n6-5mp" userLabel="Button - full screen dismiss">
-                                        <rect key="frame" x="0.0" y="0.0" width="774" height="1029"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="dismissOverlay:" destination="Sei-Rb-jd2" eventType="touchUpInside" id="5d5-IW-DaM"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="cdW-LA-iru" firstAttribute="top" secondItem="VSF-kt-Wxg" secondAttribute="bottom" constant="40" id="2Tn-SD-9vR"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ny2-n6-5mp" secondAttribute="trailing" id="7VC-ky-TXO"/>
-                                    <constraint firstItem="VSF-kt-Wxg" firstAttribute="top" secondItem="aZS-WM-yQj" secondAttribute="bottom" id="GM2-PR-3TG"/>
-                                    <constraint firstAttribute="trailing" secondItem="VSF-kt-Wxg" secondAttribute="trailing" constant="99" id="JLd-Qw-wRL"/>
-                                    <constraint firstAttribute="trailing" secondItem="cdW-LA-iru" secondAttribute="trailing" constant="99" id="KU7-qa-ZJE"/>
-                                    <constraint firstAttribute="trailing" secondItem="aZS-WM-yQj" secondAttribute="trailing" constant="99" id="Sy7-4z-f6C"/>
-                                    <constraint firstItem="Ny2-n6-5mp" firstAttribute="leading" secondItem="hFi-zn-apu" secondAttribute="leading" id="cTW-Dv-mUE"/>
-                                    <constraint firstItem="aZS-WM-yQj" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="42" id="gX8-18-Wfw"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ny2-n6-5mp" secondAttribute="bottom" id="ph8-xC-pGb"/>
-                                    <constraint firstItem="Ny2-n6-5mp" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" id="xz3-9g-rmp"/>
+                                    <constraint firstItem="Jbw-Ki-aEY" firstAttribute="centerX" secondItem="F6S-gO-chA" secondAttribute="centerX" id="Twm-XE-VgN"/>
+                                    <constraint firstItem="F6S-gO-chA" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="29" id="VGt-wF-vdf"/>
+                                    <constraint firstAttribute="trailing" secondItem="F6S-gO-chA" secondAttribute="trailing" constant="26" id="yuH-q9-eVK"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -512,8 +489,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_warm_start.png" width="306" height="309"/>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
-        <image name="overlay-arrow.png" width="126" height="58"/>
         <image name="play_black.png" width="49" height="49"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
