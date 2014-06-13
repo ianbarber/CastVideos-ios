@@ -28,91 +28,6 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--Cast Instructions View Controller-->
-        <scene sceneID="dm2-M5-sUU">
-            <objects>
-                <viewController storyboardIdentifier="CastInstructions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n38-rt-U7p" customClass="CastInstructionsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0OW-zY-CQR"/>
-                        <viewControllerLayoutGuide type="bottom" id="J7U-nm-QzQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6oP-F4-xIf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Nw-ll-tcJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y54-UE-Pgo" userLabel="Overlay Container - make sure this is on top">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byA-ko-1b5">
-                                        <rect key="frame" x="100" y="73" width="194" height="83"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.364705890417099" green="0.44313728809356689" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="qb7-Mi-quC">
-                                        <rect key="frame" x="40" y="164" width="241" height="224"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.36862745881080627" green="0.44313728809356689" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="241" id="Hgv-Ou-VmI"/>
-                                            <constraint firstAttribute="height" constant="155" id="jaE-Ll-wmt"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Tap the Cast icon to select a device to cast video to.">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="zXO-hR-stU">
-                                        <rect key="frame" x="168" y="41" width="92" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="qb7-Mi-quC" firstAttribute="leading" secondItem="y54-UE-Pgo" secondAttribute="leading" constant="40" id="10d-ri-JXs"/>
-                                    <constraint firstAttribute="trailing" secondItem="zXO-hR-stU" secondAttribute="trailing" constant="60" id="a93-0w-fZj"/>
-                                    <constraint firstAttribute="trailing" secondItem="byA-ko-1b5" secondAttribute="trailing" constant="26" id="dg4-g9-nQh"/>
-                                    <constraint firstAttribute="bottom" secondItem="qb7-Mi-quC" secondAttribute="bottom" constant="92" id="zVB-aE-wrQ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="J7U-nm-QzQ" firstAttribute="top" secondItem="y54-UE-Pgo" secondAttribute="bottom" id="S7F-eJ-mRC"/>
-                            <constraint firstItem="J7U-nm-QzQ" firstAttribute="top" secondItem="8Nw-ll-tcJ" secondAttribute="bottom" id="T7f-EW-9so"/>
-                            <constraint firstItem="y54-UE-Pgo" firstAttribute="top" secondItem="6oP-F4-xIf" secondAttribute="top" id="UHK-aC-VKv"/>
-                            <constraint firstItem="8Nw-ll-tcJ" firstAttribute="leading" secondItem="6oP-F4-xIf" secondAttribute="leading" id="VdA-9h-Ob0"/>
-                            <constraint firstItem="8Nw-ll-tcJ" firstAttribute="top" secondItem="6oP-F4-xIf" secondAttribute="top" id="YhA-kI-yXR"/>
-                            <constraint firstItem="y54-UE-Pgo" firstAttribute="leading" secondItem="6oP-F4-xIf" secondAttribute="leading" id="ZaG-eG-wAa"/>
-                            <constraint firstAttribute="trailing" secondItem="8Nw-ll-tcJ" secondAttribute="trailing" id="mYp-AE-zib"/>
-                            <constraint firstAttribute="trailing" secondItem="y54-UE-Pgo" secondAttribute="trailing" id="q7o-NZ-TjP"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="overlayView" destination="y54-UE-Pgo" id="oZ2-a8-RQp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XaI-g5-DLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="220" y="714"/>
-        </scene>
         <!--Cast View Controller-->
         <scene sceneID="u6e-mf-Khc">
             <objects>
@@ -498,6 +413,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVR-LH-GaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1354" y="65"/>
+        </scene>
+        <!--Cast Instructions View Controller-->
+        <scene sceneID="hBz-y5-w14">
+            <objects>
+                <viewController storyboardIdentifier="CastInstructions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Seq-Bw-rJX" customClass="CastInstructionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vxl-go-Hb4"/>
+                        <viewControllerLayoutGuide type="bottom" id="sIE-nZ-kAM"/>
+                    </layoutGuides>
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="QzV-da-GdV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwd-5J-NGl" userLabel="Button - full screen dismiss">
+                                <rect key="frame" x="-227" y="-274" width="774" height="1029"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissOverlay:" destination="Seq-Bw-rJX" eventType="touchUpInside" id="TQO-Ta-6ED"/>
+                                </connections>
+                            </button>
+                            <view opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-tv-x7a" userLabel="Grey overlay">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amO-Et-w9R" userLabel="Overlay Container - make sure this is on top">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Chromecast Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3d-un-tXj">
+                                        <rect key="frame" x="84" y="64" width="194" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.36470589040000001" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="194" id="Uqy-wC-ugK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="lpS-SZ-Eif">
+                                        <rect key="frame" x="37" y="217" width="241" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.36862745879999997" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="241" id="3wR-xf-65m"/>
+                                            <constraint firstAttribute="height" constant="224" id="b3g-sa-KHd"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Tap the Cast icon to select a device to cast video to.">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacingBefore="5" firstLineHeadIndent="4" headIndent="4" defaultTabInterval="4"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="oUw-H8-vlR">
+                                        <rect key="frame" x="186" y="33" width="92" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="92" id="ICE-9B-p7c"/>
+                                            <constraint firstAttribute="height" constant="31" id="W8J-gs-hyD"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="lpS-SZ-Eif" secondAttribute="bottom" constant="39" id="Yst-Ps-tM6"/>
+                                    <constraint firstAttribute="trailing" secondItem="O3d-un-tXj" secondAttribute="trailing" constant="42" id="icd-0B-ay1"/>
+                                    <constraint firstAttribute="trailing" secondItem="oUw-H8-vlR" secondAttribute="trailing" constant="42" id="zXL-S2-IW2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sIE-nZ-kAM" firstAttribute="top" secondItem="amO-Et-w9R" secondAttribute="bottom" id="6dM-lk-WsH"/>
+                            <constraint firstAttribute="trailing" secondItem="aMe-tv-x7a" secondAttribute="trailing" id="9a8-4Z-lbu"/>
+                            <constraint firstItem="aMe-tv-x7a" firstAttribute="leading" secondItem="QzV-da-GdV" secondAttribute="leading" id="9iu-NW-Ukn"/>
+                            <constraint firstItem="aMe-tv-x7a" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="Bb5-ge-P3U"/>
+                            <constraint firstItem="aMe-tv-x7a" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="JBm-0z-oYi"/>
+                            <constraint firstItem="sIE-nZ-kAM" firstAttribute="top" secondItem="aMe-tv-x7a" secondAttribute="bottom" id="NSZ-CB-Zvy"/>
+                            <constraint firstAttribute="trailing" secondItem="aMe-tv-x7a" secondAttribute="trailing" id="RYB-8F-cyH"/>
+                            <constraint firstItem="aMe-tv-x7a" firstAttribute="leading" secondItem="QzV-da-GdV" secondAttribute="leading" id="VAw-6c-4h3"/>
+                            <constraint firstAttribute="trailing" secondItem="amO-Et-w9R" secondAttribute="trailing" id="bfE-cH-aJf"/>
+                            <constraint firstItem="sIE-nZ-kAM" firstAttribute="top" secondItem="aMe-tv-x7a" secondAttribute="bottom" id="bhh-kn-gcE"/>
+                            <constraint firstAttribute="centerX" secondItem="aMe-tv-x7a" secondAttribute="centerX" id="cj2-Id-0qb"/>
+                            <constraint firstItem="amO-Et-w9R" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="lKI-Tn-b40"/>
+                            <constraint firstItem="amO-Et-w9R" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="oee-zD-pcE"/>
+                            <constraint firstItem="sIE-nZ-kAM" firstAttribute="top" secondItem="amO-Et-w9R" secondAttribute="bottom" id="pFk-LI-BDw"/>
+                            <constraint firstItem="amO-Et-w9R" firstAttribute="leading" secondItem="QzV-da-GdV" secondAttribute="leading" id="xu2-dn-y71"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="overlayView" destination="amO-Et-w9R" id="gAd-kT-hzJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxt-9b-c4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="820"/>
         </scene>
     </scenes>
     <resources>
