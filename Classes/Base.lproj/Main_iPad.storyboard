@@ -402,7 +402,7 @@
                         <viewControllerLayoutGuide type="top" id="ZGt-YD-Pop"/>
                         <viewControllerLayoutGuide type="bottom" id="yad-pY-egm"/>
                     </layoutGuides>
-                    <view key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="Atl-kB-oNd">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="Atl-kB-oNd">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -412,7 +412,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -426,7 +426,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-LA-iru">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="241" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-LA-iru">
                                         <rect key="frame" x="428" y="196" width="241" height="224"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.36862745879999997" green="0.44313728810000003" blue="0.50588238240000005" alpha="1" colorSpace="deviceRGB"/>
@@ -448,7 +448,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-WM-yQj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="overlay-arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="aZS-WM-yQj">
                                         <rect key="frame" x="577" y="42" width="92" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -465,19 +465,23 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.93926517339563609" blue="0.24893939972600121" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="1dA-k8-jWo"/>
                             <constraint firstAttribute="trailing" secondItem="tSN-Rk-W7h" secondAttribute="trailing" id="8WJ-rO-Skh"/>
+                            <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="bottom" id="9k4-d1-xaF"/>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="Jo0-S8-3Lf"/>
+                            <constraint firstItem="hFi-zn-apu" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="M03-gT-4e6"/>
                             <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="tSN-Rk-W7h" secondAttribute="bottom" id="PJE-bv-rGY"/>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="QqO-ym-pqN"/>
                             <constraint firstAttribute="trailing" secondItem="tSN-Rk-W7h" secondAttribute="trailing" id="VVT-OU-jwl"/>
                             <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="tSN-Rk-W7h" secondAttribute="bottom" id="Vqg-X2-qxu"/>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="cf7-ys-APk"/>
+                            <constraint firstItem="hFi-zn-apu" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="gLb-vM-WJs"/>
                             <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="bottom" id="nJP-HH-naV"/>
                             <constraint firstAttribute="centerX" secondItem="tSN-Rk-W7h" secondAttribute="centerX" id="ug5-nN-C5H"/>
                             <constraint firstItem="hFi-zn-apu" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="whg-Jb-DGz"/>
+                            <constraint firstAttribute="trailing" secondItem="hFi-zn-apu" secondAttribute="trailing" id="yiY-Re-BuK"/>
                         </constraints>
                     </view>
                     <connections>

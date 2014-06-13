@@ -85,7 +85,6 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
                         [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
                                                  bundle:[NSBundle mainBundle]];
     CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
-    overlay.view.backgroundColor = [UIColor clearColor];
     overlay.modalPresentationStyle = UIModalPresentationCustom;
     overlay.transitioningDelegate = self;
     [self presentViewController:overlay animated:YES completion:nil];
