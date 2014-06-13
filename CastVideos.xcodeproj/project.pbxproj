@@ -112,7 +112,6 @@
 		4D2703D1193E2590005DA209 /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2703D0193E2590005DA209 /* GoogleCast.framework */; };
 		4D4B4BEB19462CBD00167EAE /* CastInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B4BE919462CBD00167EAE /* CastInstructionsViewController.m */; };
 		4D4B4BEF194638B800167EAE /* SemiModalAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B4BEE194638B800167EAE /* SemiModalAnimatedTransition.m */; };
-		4D4B4BF31946598D00167EAE /* overlay-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4B4BF21946598D00167EAE /* overlay-arrow.png */; };
 		CC4C24411921479600EB4713 /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4C24401921479600EB4713 /* GoogleCast.framework */; };
 /* End PBXBuildFile section */
 
@@ -248,7 +247,6 @@
 		4D4B4BE919462CBD00167EAE /* CastInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CastInstructionsViewController.m; path = ../CastInstructionsViewController.m; sourceTree = "<group>"; };
 		4D4B4BED194638B800167EAE /* SemiModalAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemiModalAnimatedTransition.h; sourceTree = "<group>"; };
 		4D4B4BEE194638B800167EAE /* SemiModalAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemiModalAnimatedTransition.m; sourceTree = "<group>"; };
-		4D4B4BF21946598D00167EAE /* overlay-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay-arrow.png"; sourceTree = "<group>"; };
 		CC4C24401921479600EB4713 /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleCast.framework; path = ../GoogleCast.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -450,7 +448,6 @@
 				4945BD7C1851041900619BF8 /* pause_dark@2x.png */,
 				4945BD7D1851041900619BF8 /* pause_light.png */,
 				4945BD7E1851041900619BF8 /* pause_light@2x.png */,
-				4D4B4BF21946598D00167EAE /* overlay-arrow.png */,
 				4945BD7F1851041900619BF8 /* play_dark.png */,
 				4945BD801851041900619BF8 /* play_dark@2x.png */,
 				4945BD811851041900619BF8 /* play_light.png */,
@@ -575,7 +572,6 @@
 				12E0CD1318550A0700447896 /* icon_photos_black.png in Resources */,
 				12E0CD0318550A0700447896 /* cast_outline.png in Resources */,
 				12E0CD1218550A0700447896 /* icon_music_black@2x.png in Resources */,
-				4D4B4BF31946598D00167EAE /* overlay-arrow.png in Resources */,
 				284CBDA4182ADC2D007F65F9 /* Images.xcassets in Resources */,
 				284CC02D182B0F9B007F65F9 /* icon-cast-connected@2x.png in Resources */,
 				12E0CD0618550A0700447896 /* cast_solid_black@2x.png in Resources */,
