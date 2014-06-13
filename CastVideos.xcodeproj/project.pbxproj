@@ -106,6 +106,8 @@
 		4945BD8A1851041900619BF8 /* play_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4945BD821851041900619BF8 /* play_light@2x.png */; };
 		496D46FE182DBE9100343F72 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 496D46FD182DBE9100343F72 /* Media.m */; };
 		496D4701182DBE9C00343F72 /* MediaListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 496D4700182DBE9C00343F72 /* MediaListModel.m */; };
+		4D1FD79E194B58200050A890 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FD79C194B58200050A890 /* TestViewController.m */; };
+		4D1FD79F194B58200050A890 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FD79D194B58200050A890 /* TestViewController.xib */; };
 		4D2703D1193E2590005DA209 /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2703D0193E2590005DA209 /* GoogleCast.framework */; };
 		4D4B4BEB19462CBD00167EAE /* CastInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B4BE919462CBD00167EAE /* CastInstructionsViewController.m */; };
 		4D4B4BEF194638B800167EAE /* SemiModalAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B4BEE194638B800167EAE /* SemiModalAnimatedTransition.m */; };
@@ -236,6 +238,9 @@
 		496D46FD182DBE9100343F72 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
 		496D46FF182DBE9C00343F72 /* MediaListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaListModel.h; sourceTree = "<group>"; };
 		496D4700182DBE9C00343F72 /* MediaListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaListModel.m; sourceTree = "<group>"; };
+		4D1FD79B194B58200050A890 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		4D1FD79C194B58200050A890 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		4D1FD79D194B58200050A890 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		4D2703D0193E2590005DA209 /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleCast.framework; sourceTree = "<group>"; };
 		4D4B4BE819462CBD00167EAE /* CastInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CastInstructionsViewController.h; path = ../CastInstructionsViewController.h; sourceTree = "<group>"; };
 		4D4B4BE919462CBD00167EAE /* CastInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CastInstructionsViewController.m; path = ../CastInstructionsViewController.m; sourceTree = "<group>"; };
@@ -319,6 +324,9 @@
 				284CBD95182ADC2D007F65F9 /* AppDelegate.m */,
 				284CBD97182ADC2D007F65F9 /* Main_iPhone.storyboard */,
 				284CBD9A182ADC2D007F65F9 /* Main_iPad.storyboard */,
+				4D1FD79B194B58200050A890 /* TestViewController.h */,
+				4D1FD79C194B58200050A890 /* TestViewController.m */,
+				4D1FD79D194B58200050A890 /* TestViewController.xib */,
 				284CBD9D182ADC2D007F65F9 /* MediaTableViewController.h */,
 				284CBD9E182ADC2D007F65F9 /* MediaTableViewController.m */,
 				284CC033182C3396007F65F9 /* CastViewController.h */,
@@ -545,6 +553,7 @@
 				12E0CD1F18550A0700447896 /* pause_black.png in Resources */,
 				12E0CD2418550A0700447896 /* prev_black@2x.png in Resources */,
 				12E0CD0718550A0700447896 /* cast_solid_custom.png in Resources */,
+				4D1FD79F194B58200050A890 /* TestViewController.xib in Resources */,
 				12E0CD1518550A0700447896 /* icon_settings_black.png in Resources */,
 				129886E41872348A00B013D2 /* video_thumb_mini@2x.png in Resources */,
 				12E0CD1B18550A0700447896 /* list_outline.png in Resources */,
@@ -632,6 +641,7 @@
 			files = (
 				284CBD96182ADC2D007F65F9 /* AppDelegate.m in Sources */,
 				284CC032182B1891007F65F9 /* ChromecastDeviceController.m in Sources */,
+				4D1FD79E194B58200050A890 /* TestViewController.m in Sources */,
 				4D4B4BEB19462CBD00167EAE /* CastInstructionsViewController.m in Sources */,
 				284CBD9F182ADC2D007F65F9 /* MediaTableViewController.m in Sources */,
 				284CC035182C3396007F65F9 /* CastViewController.m in Sources */,

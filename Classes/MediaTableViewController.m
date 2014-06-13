@@ -20,6 +20,7 @@
 #import "MediaListModel.h"
 #import "CastInstructionsViewController.h"
 #import "SemiModalAnimatedTransition.h"
+#import "TestViewController.h"
 
 @interface MediaTableViewController () {
   __weak ChromecastDeviceController *_chromecastController;
@@ -54,9 +55,10 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
       [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_castvideos.png"]];
 
   // Display cast icon in the right nav bar button, if we have devices.
-  if (_chromecastController.deviceScanner.devices.count > 0) {
+  // TODO remove this comment
+//  if (_chromecastController.deviceScanner.devices.count > 0) {
     [self showCastIcon];
-  }
+ // }
 
   // Asynchronously load the media json
   self.mediaList = [[MediaListModel alloc] init];
@@ -78,14 +80,13 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
 
   hasSeenChromecastOverlay = false; // TODO remove before release, this is for debugging only
   if(!hasSeenChromecastOverlay) {
+
     UIStoryboard *sb = [UIStoryboard storyboardWithName:
                         [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
                                                  bundle:[NSBundle mainBundle]];
     CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
     overlay.view.backgroundColor = [UIColor clearColor];
     overlay.modalPresentationStyle = UIModalPresentationCustom;
-    overlay.view.bounds = self.view.bounds;
-    overlay.view.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
     overlay.transitioningDelegate = self;
     [self presentViewController:overlay animated:YES completion:nil];
 
@@ -94,7 +95,9 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
   }
 }
 
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                   presentingController:(UIViewController *)presenting
+                                                                       sourceController:(UIViewController *)source
 {
   SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
   semiModalAnimatedTransition.presenting = YES;

@@ -32,9 +32,13 @@
     [transitionContext.containerView addSubview:toViewController.view];
 
     toViewController.view.alpha = 0.0;
+    toViewController.view.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    toViewController.view.bounds = fromViewController.view.bounds;
+    toViewController.view.center = fromViewController.view.center;
 
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
       toViewController.view.alpha = 1.0;
+
     } completion:^(BOOL finished) {
       [transitionContext completeTransition:YES];
     }];
