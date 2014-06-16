@@ -333,10 +333,10 @@
 				12E0CCB9184FEF4F00447896 /* VolumeChangeController.m */,
 				491627AD184FBF9C00351397 /* SimpleImageFetcher.h */,
 				491627AE184FBF9C00351397 /* SimpleImageFetcher.m */,
-				284CBDA3182ADC2D007F65F9 /* Images.xcassets */,
-				284CBD8C182ADC2D007F65F9 /* Supporting Files */,
 				4D4B4BED194638B800167EAE /* SemiModalAnimatedTransition.h */,
 				4D4B4BEE194638B800167EAE /* SemiModalAnimatedTransition.m */,
+				284CBDA3182ADC2D007F65F9 /* Images.xcassets */,
+				284CBD8C182ADC2D007F65F9 /* Supporting Files */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
