@@ -193,7 +193,6 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 #pragma mark - GCKDeviceManagerDelegate
 
 - (void)deviceManagerDidConnect:(GCKDeviceManager *)deviceManager {
-  NSLog(@"connected!!");
 
   if(!self.isReconnecting) {
     [self.deviceManager launchApplication:kReceiverAppID];
@@ -209,7 +208,6 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
                       sessionID:(NSString *)sessionID
             launchedApplication:(BOOL)launchedApplication {
 
-  NSLog(@"application has launched");
   self.isReconnecting = NO;
   self.mediaControlChannel = [[GCKMediaControlChannel alloc] init];
   self.mediaControlChannel.delegate = self;
@@ -300,7 +298,6 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
     volumeDidChangeToLevel:(float)volumeLevel
                    isMuted:(BOOL)isMuted {
-  NSLog(@"New volume level of %f reported!", volumeLevel);
   _deviceVolume = volumeLevel;
   self.deviceMuted = isMuted;
 
@@ -572,7 +569,6 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
     UIImage *image = [UIImage imageWithData:[SimpleImageFetcher getDataFromImageURL:img.URL]];
 
     dispatch_async(dispatch_get_main_queue(), ^{
-      NSLog(@"Loaded thumbnail image");
       self.toolbarThumbnailURL = img.URL;
       self.toolbarThumbnailImage.image = image;
     });
