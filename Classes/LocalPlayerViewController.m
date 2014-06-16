@@ -16,6 +16,8 @@
 #import "LocalPlayerViewController.h"
 #import "CastViewController.h"
 #import "SimpleImageFetcher.h"
+#import "CastInstructionsViewController.h"
+#import "SemiModalAnimatedTransition.h"
 
 #define MOVIE_CONTAINER_TAG 1
 
@@ -172,10 +174,11 @@
   AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
   _chromecastController = delegate.chromecastDeviceController;
 
-  //Add cast button
-  if (_chromecastController.deviceScanner.devices.count > 0) {
-    self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-  }
+  //Add cast button TODO Put this back in
+//  if (_chromecastController.deviceScanner.devices.count > 0) {
+//    self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
+    [self showCastIcon];
+//  }
 
   // Set an empty image for selected ("pause") state.
   [self.playPauseButton setImage:[UIImage new] forState:UIControlStateSelected];
@@ -277,6 +280,31 @@
 - (void)shouldPresentPlaybackController {
   [self performSegueWithIdentifier:@"castMedia" sender:self];
 }
+
+#pragma mark - Showing the overlay
+
+// Show cast icon. If this is the first time the cast icon is appearing, show an overlay with
+// instructions highlighting the cast icon.
+- (void) showCastIcon {
+  self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
+  [CastInstructionsViewController instantiateOverViewController:self transitioningDelegate:self];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                   presentingController:(UIViewController *)presenting
+                                                                       sourceController:(UIViewController *)source
+{
+  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
+  semiModalAnimatedTransition.presenting = YES;
+  return semiModalAnimatedTransition;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
+  return semiModalAnimatedTransition;
+}
+
 
 #pragma mark - Implementation
 

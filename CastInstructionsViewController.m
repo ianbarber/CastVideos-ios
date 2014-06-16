@@ -14,7 +14,34 @@
 
 #import "CastInstructionsViewController.h"
 
+
 @implementation CastInstructionsViewController
+
+NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
+
++ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController
+                                             transitioningDelegate:(id<UIViewControllerTransitioningDelegate>) delegate {
+  // Only show this overlay to the user once
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
+
+  hasSeenChromecastOverlay = false; // TODO remove before release, this is for debugging only
+  if(!hasSeenChromecastOverlay) {
+
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:
+                        [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
+                                                 bundle:[NSBundle mainBundle]];
+    CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
+    overlay.modalPresentationStyle = UIModalPresentationCustom;
+    overlay.transitioningDelegate = delegate;
+    [viewController presentViewController:overlay animated:YES completion:nil];
+
+    [defaults setBool:true forKey:kHasSeenChromecastOverlay];
+    [defaults synchronize];
+    return overlay;
+  }
+  return nil;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];

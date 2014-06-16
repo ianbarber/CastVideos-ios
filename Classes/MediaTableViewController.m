@@ -30,8 +30,6 @@
 
 @implementation MediaTableViewController
 
-NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
-
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -62,25 +60,7 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
 // instructions highlighting the cast icon.
 - (void) showCastIcon {
   self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-
-  // Only show this overlay to the user once
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
-
-  hasSeenChromecastOverlay = false; // TODO remove before release, this is for debugging only
-  if(!hasSeenChromecastOverlay) {
-
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:
-                        [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
-                                                 bundle:[NSBundle mainBundle]];
-    CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
-    overlay.modalPresentationStyle = UIModalPresentationCustom;
-    overlay.transitioningDelegate = self;
-    [self presentViewController:overlay animated:YES completion:nil];
-
-    [defaults setBool:true forKey:kHasSeenChromecastOverlay];
-    [defaults synchronize];
-  }
+  [CastInstructionsViewController instantiateOverViewController:self transitioningDelegate:self];
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
