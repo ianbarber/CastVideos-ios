@@ -782,7 +782,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					..,
-					"/Users/javaclimber/Documents/chromecast/google-cast-ios-demo-google-code/Google_Cast_iOS",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -810,7 +809,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					..,
-					"/Users/javaclimber/Documents/chromecast/google-cast-ios-demo-google-code/Google_Cast_iOS",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
