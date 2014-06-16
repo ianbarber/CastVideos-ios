@@ -215,11 +215,6 @@
   }
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
   // Respond to orientation only when not connected.
   if (_chromecastController.isConnected == YES) {
