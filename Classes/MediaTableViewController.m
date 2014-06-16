@@ -109,14 +109,6 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
   [_chromecastController updateToolbarForViewController:self];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
