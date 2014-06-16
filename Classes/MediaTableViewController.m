@@ -19,7 +19,6 @@
 #import "Media.h"
 #import "MediaListModel.h"
 #import "CastInstructionsViewController.h"
-#import "SemiModalAnimatedTransition.h"
 
 @interface MediaTableViewController () {
   __weak ChromecastDeviceController *_chromecastController;

@@ -17,7 +17,6 @@
 #import "CastViewController.h"
 #import "SimpleImageFetcher.h"
 #import "CastInstructionsViewController.h"
-#import "SemiModalAnimatedTransition.h"
 
 #define MOVIE_CONTAINER_TAG 1
 
