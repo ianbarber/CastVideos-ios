@@ -287,24 +287,8 @@
 // instructions highlighting the cast icon.
 - (void) showCastIcon {
   self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-  [CastInstructionsViewController instantiateOverViewController:self transitioningDelegate:self];
+  [CastInstructionsViewController instantiateOverViewController:self];
 }
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                   presentingController:(UIViewController *)presenting
-                                                                       sourceController:(UIViewController *)source
-{
-  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
-  semiModalAnimatedTransition.presenting = YES;
-  return semiModalAnimatedTransition;
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
-  return semiModalAnimatedTransition;
-}
-
 
 #pragma mark - Implementation
 

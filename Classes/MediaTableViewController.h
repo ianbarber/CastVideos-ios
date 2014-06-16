@@ -14,6 +14,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MediaTableViewController : UITableViewController<ChromecastControllerDelegate, UIViewControllerTransitioningDelegate>
+@interface MediaTableViewController : UITableViewController<ChromecastControllerDelegate>
 
 @end

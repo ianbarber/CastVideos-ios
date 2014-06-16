@@ -13,14 +13,13 @@
 // limitations under the License.
 
 #import "CastInstructionsViewController.h"
-
+#import "SemiModalAnimatedTransition.h"
 
 @implementation CastInstructionsViewController
 
 NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
 
-+ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController
-                                             transitioningDelegate:(id<UIViewControllerTransitioningDelegate>) delegate {
++ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController {
   // Only show this overlay to the user once
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
@@ -33,7 +32,7 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
                                                  bundle:[NSBundle mainBundle]];
     CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
     overlay.modalPresentationStyle = UIModalPresentationCustom;
-    overlay.transitioningDelegate = delegate;
+    overlay.transitioningDelegate = overlay;
     [viewController presentViewController:overlay animated:YES completion:nil];
 
     [defaults setBool:true forKey:kHasSeenChromecastOverlay];
@@ -49,6 +48,21 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
 
 -(IBAction)dismissOverlay:(id)sender {
   [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                   presentingController:(UIViewController *)presenting
+                                                                       sourceController:(UIViewController *)source
+{
+  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
+  semiModalAnimatedTransition.presenting = YES;
+  return semiModalAnimatedTransition;
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+  SemiModalAnimatedTransition *semiModalAnimatedTransition = [[SemiModalAnimatedTransition alloc] init];
+  return semiModalAnimatedTransition;
 }
 
 @end

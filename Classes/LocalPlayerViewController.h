@@ -20,7 +20,7 @@
 /**
  * A view to play media locally, when not connected to the Chromecast device.
  */
-@interface LocalPlayerViewController : UIViewController<ChromecastControllerDelegate, UIViewControllerTransitioningDelegate>
+@interface LocalPlayerViewController : UIViewController<ChromecastControllerDelegate>
 
 /** The media object being played on Chromecast device. Set this before presenting the view. */
 @property(strong, nonatomic) Media *mediaToPlay;

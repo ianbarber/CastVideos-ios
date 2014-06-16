@@ -14,10 +14,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CastInstructionsViewController : UIViewController
+@interface CastInstructionsViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
-+ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController
-                                             transitioningDelegate:(id<UIViewControllerTransitioningDelegate>) delegate;
++ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController;
 
 /** Represents the entire overlay with instructions for first time Chromecast users **/
 @property(nonatomic, strong) IBOutlet UIView *overlayView;
