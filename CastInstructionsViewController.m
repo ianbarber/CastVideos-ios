@@ -14,10 +14,6 @@
 
 #import "CastInstructionsViewController.h"
 
-@interface CastInstructionsViewController ()
-
-@end
-
 @implementation CastInstructionsViewController
 
 - (void)viewDidLoad {

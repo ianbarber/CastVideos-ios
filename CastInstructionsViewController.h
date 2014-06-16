@@ -16,7 +16,10 @@
 
 @interface CastInstructionsViewController : UIViewController
 
+/** Represents the entire overlay with instructions for first time Chromecast users **/
 @property(nonatomic, strong) IBOutlet UIView *overlayView;
+
+/** Dismisses the entire overlay **/
 - (IBAction)dismissOverlay:(id)sender;
 
 @end

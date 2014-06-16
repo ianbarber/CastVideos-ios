@@ -32,16 +32,6 @@
 
 NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
 
-- (id)initWithCoder:(NSCoder *)decoder {
-  self = [super initWithCoder:decoder];
-  if (self) {
-  }
-  return self;
-}
-
-- (void)dealloc {
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
 

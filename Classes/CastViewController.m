@@ -43,19 +43,6 @@
 
 @implementation CastViewController
 
-
-- (id)initWithCoder:(NSCoder*)decoder {
-  self = [super initWithCoder:decoder];
-  if (self) {
-    [self initControls];
-  }
-
-  return self;
-}
-
-- (void)dealloc {
-}
-
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -111,10 +98,6 @@
     _isManualVolumeChange = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Managing the detail item
 
