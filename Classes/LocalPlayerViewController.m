@@ -34,17 +34,6 @@
 
 @implementation LocalPlayerViewController
 
-- (id)initWithCoder:(NSCoder *)decoder {
-  self = [super initWithCoder:decoder];
-  if (self) {
-  }
-
-  return self;
-}
-
-- (void)dealloc {
-}
-
 #pragma mark State management
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"castMedia"]) {
@@ -174,11 +163,10 @@
   AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
   _chromecastController = delegate.chromecastDeviceController;
 
-  //Add cast button TODO Put this back in
-//  if (_chromecastController.deviceScanner.devices.count > 0) {
-//    self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
+  //Add cast button
+  if (_chromecastController.deviceScanner.devices.count > 0) {
     [self showCastIcon];
-//  }
+  }
 
   // Set an empty image for selected ("pause") state.
   [self.playPauseButton setImage:[UIImage new] forState:UIControlStateSelected];
@@ -239,7 +227,7 @@
 
 - (void)didDiscoverDeviceOnNetwork {
   // Add the chromecast icon if not present.
-  self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
+  [self showCastIcon];
 }
 
 /**
@@ -287,7 +275,7 @@
 // instructions highlighting the cast icon.
 - (void) showCastIcon {
   self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-  [CastInstructionsViewController instantiateOverViewController:self];
+  [CastInstructionsViewController showIfFirstTimeOverViewController:self];
 }
 
 #pragma mark - Implementation

@@ -43,9 +43,9 @@
 
   // Display cast icon in the right nav bar button, if we have devices.
   // TODO remove this comment
-//  if (_chromecastController.deviceScanner.devices.count > 0) {
+  if (_chromecastController.deviceScanner.devices.count > 0) {
     [self showCastIcon];
- // }
+  }
 
   // Asynchronously load the media json
   self.mediaList = [[MediaListModel alloc] init];
@@ -60,7 +60,7 @@
 // instructions highlighting the cast icon.
 - (void) showCastIcon {
   self.navigationItem.rightBarButtonItem = _chromecastController.chromecastBarButton;
-  [CastInstructionsViewController instantiateOverViewController:self];
+  [CastInstructionsViewController showIfFirstTimeOverViewController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

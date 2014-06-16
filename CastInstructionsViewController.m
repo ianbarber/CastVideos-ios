@@ -19,27 +19,31 @@
 
 NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
 
-+ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController {
-  // Only show this overlay to the user once
++(void)showIfFirstTimeOverViewController:(UIViewController *)viewController {
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
 
-  hasSeenChromecastOverlay = false; // TODO remove before release, this is for debugging only
+  // Only show it if we haven't seen it before
   if(!hasSeenChromecastOverlay) {
+    CastInstructionsViewController *cvc = [[CastInstructionsViewController alloc] init];
+    [viewController presentViewController:cvc animated:YES completion:^() {
+      // once viewDidAppear is successfully called, mark this preference as viewed
+      [defaults setBool:true forKey:kHasSeenChromecastOverlay];
+      [defaults synchronize];
+    }];
+  }
+}
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:
                         [[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"]
                                                  bundle:[NSBundle mainBundle]];
-    CastInstructionsViewController *overlay = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
-    overlay.modalPresentationStyle = UIModalPresentationCustom;
-    overlay.transitioningDelegate = overlay;
-    [viewController presentViewController:overlay animated:YES completion:nil];
-
-    [defaults setBool:true forKey:kHasSeenChromecastOverlay];
-    [defaults synchronize];
-    return overlay;
+    self = [sb instantiateViewControllerWithIdentifier:@"CastInstructions"];
+    self.modalPresentationStyle = UIModalPresentationCustom;
+    self.transitioningDelegate = self;
   }
-  return nil;
+  return self;
 }
 
 - (void)viewDidLoad {

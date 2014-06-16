@@ -16,7 +16,8 @@
 
 @interface CastInstructionsViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
-+ (CastInstructionsViewController *) instantiateOverViewController:(UIViewController *) viewController;
+/** Helper class method for deciding whether to show instructions or not **/
++(void)showIfFirstTimeOverViewController:(UIViewController *)viewController;
 
 /** Represents the entire overlay with instructions for first time Chromecast users **/
 @property(nonatomic, strong) IBOutlet UIView *overlayView;
