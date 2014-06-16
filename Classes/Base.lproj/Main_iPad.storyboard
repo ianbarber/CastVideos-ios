@@ -67,10 +67,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOh-bt-4Kg" userLabel="Volume controls">
-                                <rect key="frame" x="304" y="112" width="160" height="106"/>
+                                <rect key="frame" x="304" y="112" width="161" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5tW-vv-68J">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5tW-vv-68J">
                                         <rect key="frame" x="-38" y="44" width="236" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </slider>
@@ -83,10 +83,6 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="5tW-vv-68J" secondAttribute="trailing" constant="5" id="LWp-sj-e9G"/>
-                                    <constraint firstItem="5tW-vv-68J" firstAttribute="leading" secondItem="QOh-bt-4Kg" secondAttribute="leading" constant="5" id="seK-GW-UsM"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +92,9 @@
                             <constraint firstAttribute="bottom" secondItem="Ngf-jI-Hf4" secondAttribute="bottom" constant="105" id="6gr-g2-Z0Z"/>
                             <constraint firstItem="Y0R-X2-KdV" firstAttribute="centerX" secondItem="Ngf-jI-Hf4" secondAttribute="centerX" id="97c-2W-hqv"/>
                             <constraint firstAttribute="bottom" secondItem="Y0R-X2-KdV" secondAttribute="bottom" id="EVW-6b-xgc"/>
+                            <constraint firstAttribute="centerX" secondItem="QOh-bt-4Kg" secondAttribute="centerX" id="J1l-t9-Pgo"/>
                             <constraint firstItem="Ngf-jI-Hf4" firstAttribute="leading" secondItem="M5Y-CY-zt7" secondAttribute="leading" constant="94" id="Q4Q-4f-isr"/>
+                            <constraint firstAttribute="centerY" secondItem="Y0R-X2-KdV" secondAttribute="centerY" id="ef1-aU-lIA"/>
                             <constraint firstItem="Y0R-X2-KdV" firstAttribute="leading" secondItem="M5Y-CY-zt7" secondAttribute="leading" id="fLm-94-pa6"/>
                             <constraint firstAttribute="trailing" secondItem="Ngf-jI-Hf4" secondAttribute="trailing" constant="93" id="q3s-hV-g8u"/>
                             <constraint firstItem="Y0R-X2-KdV" firstAttribute="top" secondItem="M5Y-CY-zt7" secondAttribute="top" id="u0G-xq-xke"/>
@@ -435,7 +433,7 @@
                                             <constraint firstAttribute="width" constant="283" id="BuX-EE-CFv"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="Jbw-Ki-aEY">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="Jbw-Ki-aEY">
                                         <rect key="frame" x="481" y="81" width="238" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
@@ -456,6 +454,9 @@
                                 <constraints>
                                     <constraint firstItem="Jbw-Ki-aEY" firstAttribute="centerX" secondItem="F6S-gO-chA" secondAttribute="centerX" id="Twm-XE-VgN"/>
                                     <constraint firstItem="F6S-gO-chA" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="29" id="VGt-wF-vdf"/>
+                                    <constraint firstItem="Jbw-Ki-aEY" firstAttribute="centerY" secondItem="F6S-gO-chA" secondAttribute="centerY" id="Wt5-UD-9my"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jbw-Ki-aEY" secondAttribute="trailing" constant="49" id="hNO-8j-phY"/>
+                                    <constraint firstItem="Jbw-Ki-aEY" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="81" id="y8r-mX-WCj"/>
                                     <constraint firstAttribute="trailing" secondItem="F6S-gO-chA" secondAttribute="trailing" constant="26" id="yuH-q9-eVK"/>
                                 </constraints>
                             </view>
@@ -499,7 +500,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BQN-oa-CRg"/>
         <segue reference="jmc-QK-zd2"/>
+        <segue reference="3cu-ej-St3"/>
     </inferredMetricsTieBreakers>
 </document>
