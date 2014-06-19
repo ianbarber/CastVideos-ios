@@ -363,6 +363,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Connect to" id="onz-PD-bd7">
+                        <barButtonItem key="leftBarButtonItem" image="cast_solid.png" id="TES-qu-ZM6">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-6"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="rDL-yb-wnm">
                             <connections>
                                 <action selector="dismissView:" destination="b3I-lG-UG9" id="2I8-dq-6f7"/>
@@ -491,6 +494,7 @@
     </scenes>
     <resources>
         <image name="bg_warm_start.png" width="306" height="309"/>
+        <image name="cast_solid.png" width="27" height="21"/>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
         <image name="play_black.png" width="49" height="49"/>
     </resources>
@@ -500,7 +504,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="BQN-oa-CRg"/>
         <segue reference="jmc-QK-zd2"/>
-        <segue reference="3cu-ej-St3"/>
     </inferredMetricsTieBreakers>
 </document>

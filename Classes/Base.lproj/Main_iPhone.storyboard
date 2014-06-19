@@ -385,6 +385,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Connect to" id="fw4-mr-Pg2">
+                        <barButtonItem key="leftBarButtonItem" image="cast_solid.png" id="KRh-tD-zau">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-2"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="co1-s0-bwq">
                             <connections>
                                 <action selector="dismissView:" destination="yAB-OW-2Xn" id="Lph-mw-eaU"/>
@@ -509,6 +512,7 @@
     </scenes>
     <resources>
         <image name="bg_warm_start.png" width="306" height="309"/>
+        <image name="cast_solid.png" width="27" height="21"/>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
         <image name="play_black.png" width="49" height="49"/>
     </resources>

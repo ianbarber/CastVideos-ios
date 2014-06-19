@@ -44,7 +44,7 @@ NSString *const CellIdForDeviceName = @"deviceName";
     return self.castDeviceController.deviceFilter.devices.count;
   } else {
     self.title =
-        [NSString stringWithFormat:@"Connected to %@", self.castDeviceController.deviceName];
+        [NSString stringWithFormat:@"%@", self.castDeviceController.deviceName];
     return 2;
   }
 }
