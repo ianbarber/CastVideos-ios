@@ -412,8 +412,9 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
 #pragma mark - implementation
 
 - (void)showError:(NSError *)error {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
-                                                  message:NSLocalizedString(error.description, nil)
+  NSLog(@"Received error: %@", error.description);
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cast Error", nil)
+                                                  message:NSLocalizedString(@"An error occurred. Make sure your Chromecast is powered up and connected to the network.", nil)
                                                  delegate:nil
                                         cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                         otherButtonTitles:nil];
