@@ -201,6 +201,7 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
     NSString* lastSessionID = [defaults valueForKey:@"lastSessionID"];
     [self.deviceManager joinApplication:kReceiverAppID sessionID:lastSessionID];
   }
+  [self updateCastIconButtonStates];
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager
@@ -520,7 +521,7 @@ static NSString *const kReceiverAppID = @"4F8B3483";  //Replace with your app id
       [chromecastButton setImage:_btnImageConnected forState:UIControlStateNormal];
 
     } else {
-      // Remove the hilight.
+      // Remove the highlight.
       [chromecastButton setTintColor:nil];
       [chromecastButton setImage:_btnImage forState:UIControlStateNormal];
     }
