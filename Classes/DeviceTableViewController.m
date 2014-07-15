@@ -25,26 +25,9 @@ NSString *const CellIdForDeviceName = @"deviceName";
 
 @implementation DeviceTableViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-    // Custom initialization
-  }
-  return self;
-}
-
 - (ChromecastDeviceController *)castDeviceController {
   AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
   return delegate.chromecastDeviceController;
-}
-
-- (void)viewDidLoad {
-  [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -61,7 +44,7 @@ NSString *const CellIdForDeviceName = @"deviceName";
     return self.castDeviceController.deviceFilter.devices.count;
   } else {
     self.title =
-        [NSString stringWithFormat:@"Connected to %@", self.castDeviceController.deviceName];
+        [NSString stringWithFormat:@"%@", self.castDeviceController.deviceName];
     return 2;
   }
 }
