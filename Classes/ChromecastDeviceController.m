@@ -328,11 +328,11 @@ static NSString *const kReceiverAppID = @"F4F9749F";  //Replace with your app id
 
 #pragma mark - GCKDeviceFilterListener
 - (void)deviceDidComeOnline:(GCKDevice *)device forDeviceFilter:(GCKDeviceFilter *)deviceFilter {
-    NSLog(@"filtered device found!! %@", device.friendlyName);
-    [self updateCastIconButtonStates];
-    if ([self.delegate respondsToSelector:@selector(didDiscoverDeviceOnNetwork)]) {
-        [self.delegate didDiscoverDeviceOnNetwork];
-    }
+  NSLog(@"filtered device found!! %@", device.friendlyName);
+  [self updateCastIconButtonStates];
+  if ([self.delegate respondsToSelector:@selector(didDiscoverDeviceOnNetwork)]) {
+    [self.delegate didDiscoverDeviceOnNetwork];
+  }
 }
 
 - (void)deviceDidGoOffline:(GCKDevice *)device forDeviceFilter:(GCKDeviceFilter *)deviceFilter {

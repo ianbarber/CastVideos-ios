@@ -19,8 +19,10 @@
 
 NSString *const CellIdForDeviceName = @"deviceName";
 
-@interface DeviceTableViewController ()
-
+@interface DeviceTableViewController () {
+  NSMutableDictionary *_deviceApps;
+  GCKDeviceManager *_manager;
+}
 @end
 
 @implementation DeviceTableViewController
@@ -65,6 +67,23 @@ NSString *const CellIdForDeviceName = @"deviceName";
         [self.castDeviceController.deviceFilter.devices objectAtIndex:indexPath.row];
     cell.textLabel.text = device.friendlyName;
     cell.detailTextLabel.text = device.modelName;
+
+    // Retrieve the running app.
+    if ([_deviceApps objectForKey:device.deviceID]) {
+      cell.detailTextLabel.text = [_deviceApps objectForKey:device.deviceID];
+    } else {
+      cell.detailTextLabel.text = device.modelName;
+      NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+      NSString *appIdentifier = [info objectForKey:@"CFBundleIdentifier"];
+      //GCKDeviceManager *manager =
+      _manager =
+          [[GCKDeviceManager alloc] initWithDevice:device clientPackageName:appIdentifier];
+      [_manager setDelegate:self];
+      //BOOL res = [manager requestDeviceStatus];
+      //NSLog(@"Can get status? %hhd", res);
+      [_manager connect];
+    }
+
   } else if (self.castDeviceController.isPlayingMedia == NO) {
     if (indexPath.row == 0) {
       cell =
@@ -167,6 +186,46 @@ NSString *const CellIdForDeviceName = @"deviceName";
   UIImage *playImage =
       (playing ? [UIImage imageNamed:@"play_black.png"] : [UIImage imageNamed:@"pause_black.png"]);
   [button setBackgroundImage:playImage forState:UIControlStateNormal];
+}
+
+
+#pragma mark - GCKDeviceManagerDelegate
+
+- (void)deviceManager:(GCKDeviceManager *)deviceManager didDisconnectFromApplicationWithError:(NSError *)error {
+  NSLog(@"Disconnected: %@", error);
+}
+
+- (void)deviceManager:(GCKDeviceManager *)deviceManager didConnectToCastApplication:(GCKApplicationMetadata *)applicationMetadata sessionID:(NSString *)sessionID launchedApplication:(BOOL)launchedApplication  {
+  NSLog(@"Launched app");
+}
+
+- (void)deviceManager:(GCKDeviceManager *)deviceManager didFailToConnectWithError:(NSError *)error {
+  [deviceManager requestDeviceStatus];
+}
+
+- (void)deviceManager:(GCKDeviceManager *)deviceManager didFailToConnectToApplicationWithError:(NSError *)error {
+  [deviceManager requestDeviceStatus];
+}
+
+- (void)deviceManagerDidConnect:(GCKDeviceManager *)deviceManager {
+  [deviceManager requestDeviceStatus];
+}
+
+- (void)deviceManager:(GCKDeviceManager *)deviceManager didReceiveActiveInputStatus:(GCKActiveInputStatus)activeInputStatus {
+  NSLog(@"Got active input");
+  [deviceManager disconnect];
+}
+
+- (void)deviceManager:(GCKDeviceManager *)deviceManager
+  didReceiveStatusForApplication:(GCKApplicationMetadata *)applicationMetadata {
+  [_deviceApps setObject:applicationMetadata.applicationName forKey:deviceManager.device.deviceID];
+  // Reload this specific cell.
+  int row = [self.castDeviceController.deviceFilter.devices indexOfObject:deviceManager.device];
+  NSIndexPath *ip = [NSIndexPath indexPathForRow:row inSection:0];
+  [self.tableView beginUpdates];
+  [self.tableView reloadRowsAtIndexPaths:@[ip] withRowAnimation:UITableViewRowAnimationNone];
+  [self.tableView endUpdates];
+  [deviceManager disconnect];
 }
 
 #pragma mark - implementation

@@ -19,6 +19,8 @@
  * offers button to disconnect. When playing media, displays a mini playback
  * controller.
  */
-@interface DeviceTableViewController : UITableViewController
+@interface DeviceTableViewController : UITableViewController <
+ GCKDeviceManagerDelegate
+>
 
 @end

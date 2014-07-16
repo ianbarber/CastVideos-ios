@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="vC3-pB-5Vb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="vC3-pB-5Vb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -421,66 +421,64 @@
                             <view opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-Rk-W7h" userLabel="Grey overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cling.png" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-gO-chA">
+                                                <rect key="frame" x="543" y="-39" width="346" height="204"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="175" id="6yx-U2-O8K"/>
+                                                    <constraint firstAttribute="width" constant="283" id="BuX-EE-CFv"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="337" translatesAutoresizingMaskIntoConstraints="NO" id="XoS-BG-OeJ">
+                                                <rect key="frame" x="216" y="236" width="337" height="223"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Touch to cast videos to your TV">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="30" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cn-mK-y1i">
+                                                <rect key="frame" x="144" y="889" width="400" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <state key="normal" title="OK">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="F6S-gO-chA" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="29" id="VGt-wF-vdf"/>
+                                            <constraint firstAttribute="trailing" secondItem="F6S-gO-chA" secondAttribute="trailing" constant="26" id="yuH-q9-eVK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-zn-apu" userLabel="Overlay Container - make sure this is on top">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_warm_start.png" translatesAutoresizingMaskIntoConstraints="NO" id="F6S-gO-chA">
-                                        <rect key="frame" x="459" y="29" width="283" height="175"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="175" id="6yx-U2-O8K"/>
-                                            <constraint firstAttribute="width" constant="283" id="BuX-EE-CFv"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="Jbw-Ki-aEY">
-                                        <rect key="frame" x="481" y="81" width="238" height="71"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Click here to begin casting to your Chromecast!">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="18" name="MarkerFelt-Thin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="0.0" height="1"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Jbw-Ki-aEY" firstAttribute="centerX" secondItem="F6S-gO-chA" secondAttribute="centerX" id="Twm-XE-VgN"/>
-                                    <constraint firstItem="F6S-gO-chA" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="29" id="VGt-wF-vdf"/>
-                                    <constraint firstItem="Jbw-Ki-aEY" firstAttribute="centerY" secondItem="F6S-gO-chA" secondAttribute="centerY" id="Wt5-UD-9my"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jbw-Ki-aEY" secondAttribute="trailing" constant="49" id="hNO-8j-phY"/>
-                                    <constraint firstItem="Jbw-Ki-aEY" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="top" constant="81" id="y8r-mX-WCj"/>
-                                    <constraint firstAttribute="trailing" secondItem="F6S-gO-chA" secondAttribute="trailing" constant="26" id="yuH-q9-eVK"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="1dA-k8-jWo"/>
                             <constraint firstAttribute="trailing" secondItem="tSN-Rk-W7h" secondAttribute="trailing" id="8WJ-rO-Skh"/>
-                            <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="bottom" id="9k4-d1-xaF"/>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="Jo0-S8-3Lf"/>
-                            <constraint firstItem="hFi-zn-apu" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="M03-gT-4e6"/>
                             <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="tSN-Rk-W7h" secondAttribute="bottom" id="PJE-bv-rGY"/>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="QqO-ym-pqN"/>
                             <constraint firstAttribute="trailing" secondItem="tSN-Rk-W7h" secondAttribute="trailing" id="VVT-OU-jwl"/>
                             <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="tSN-Rk-W7h" secondAttribute="bottom" id="Vqg-X2-qxu"/>
                             <constraint firstItem="tSN-Rk-W7h" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="cf7-ys-APk"/>
-                            <constraint firstItem="hFi-zn-apu" firstAttribute="leading" secondItem="Atl-kB-oNd" secondAttribute="leading" id="gLb-vM-WJs"/>
-                            <constraint firstItem="yad-pY-egm" firstAttribute="top" secondItem="hFi-zn-apu" secondAttribute="bottom" id="nJP-HH-naV"/>
                             <constraint firstAttribute="centerX" secondItem="tSN-Rk-W7h" secondAttribute="centerX" id="ug5-nN-C5H"/>
-                            <constraint firstItem="hFi-zn-apu" firstAttribute="top" secondItem="Atl-kB-oNd" secondAttribute="top" id="whg-Jb-DGz"/>
-                            <constraint firstAttribute="trailing" secondItem="hFi-zn-apu" secondAttribute="trailing" id="yiY-Re-BuK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -493,8 +491,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_warm_start.png" width="306" height="309"/>
         <image name="cast_solid.png" width="27" height="21"/>
+        <image name="cling.png" width="179" height="179"/>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
         <image name="play_black.png" width="49" height="49"/>
     </resources>
