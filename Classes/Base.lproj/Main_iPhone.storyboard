@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -269,6 +270,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="cra-N8-TIN"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="_thumbnailView" destination="cMx-dJ-dwx" id="Krd-JS-6b9"/>
                         <outlet property="mediaDescription" destination="Lc3-Or-tkM" id="B4F-fs-2F1"/>
@@ -425,12 +427,12 @@
                         <viewControllerLayoutGuide type="top" id="vxl-go-Hb4"/>
                         <viewControllerLayoutGuide type="bottom" id="sIE-nZ-kAM"/>
                     </layoutGuides>
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="QzV-da-GdV">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="QzV-da-GdV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwd-5J-NGl" userLabel="Button - full screen dismiss">
-                                <rect key="frame" x="-227" y="-274" width="774" height="1029"/>
+                                <rect key="frame" x="39" y="-49" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal">
@@ -440,17 +442,20 @@
                                     <action selector="dismissOverlay:" destination="Seq-Bw-rJX" eventType="touchUpInside" id="TQO-Ta-6ED"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-tv-x7a" userLabel="Grey overlay">
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMe-tv-x7a" userLabel="Grey overlay">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amO-Et-w9R" userLabel="Overlay Container - make sure this is on top">
+                                    <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amO-Et-w9R" userLabel="Overlay Container - make sure this is on top">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="3o1-JE-Hst">
-                                                <rect key="frame" x="41" y="158" width="238" height="71"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="3o1-JE-Hst">
+                                                <rect key="frame" x="41" y="125" width="238" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="238" id="xzy-hb-aUI"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Touch to cast videos to your TV">
                                                         <attributes>
@@ -463,59 +468,76 @@
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="0.0" height="1"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cling.png" translatesAutoresizingMaskIntoConstraints="NO" id="VPD-hB-Umv">
-                                                <rect key="frame" x="124" y="-50" width="332" height="182"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cling.png" translatesAutoresizingMaskIntoConstraints="NO" id="VPD-hB-Umv">
+                                                <rect key="frame" x="208" y="-54" width="165" height="191"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="VPD-hB-Umv" secondAttribute="height" multiplier="154:179" id="35z-No-8rI"/>
+                                                    <constraint firstAttribute="width" constant="165" id="bMT-Yl-WoI"/>
+                                                </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEf-hO-HfK">
-                                                <rect key="frame" x="31" y="418" width="259" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEf-hO-HfK">
+                                                <rect key="frame" x="30" y="258" width="260" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="260" id="Mhd-Jx-Abl"/>
+                                                </constraints>
                                                 <state key="normal" title="OK">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cast_outline_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="KEW-Qg-s6u">
-                                                <rect key="frame" x="268" y="30" width="44" height="22"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cast_solid_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="KEW-Qg-s6u">
+                                                <rect key="frame" x="277" y="31" width="27" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="VPD-hB-Umv" firstAttribute="top" secondItem="amO-Et-w9R" secondAttribute="top" constant="-54" id="0h4-0z-R1p"/>
-                                            <constraint firstAttribute="trailing" secondItem="VPD-hB-Umv" secondAttribute="trailing" constant="-43" id="zTy-IM-vFX"/>
+                                            <constraint firstItem="3o1-JE-Hst" firstAttribute="top" secondItem="amO-Et-w9R" secondAttribute="top" constant="125" id="1tF-qq-Ihk"/>
+                                            <constraint firstAttribute="centerX" secondItem="dEf-hO-HfK" secondAttribute="centerX" id="BLa-QF-r9a"/>
+                                            <constraint firstItem="KEW-Qg-s6u" firstAttribute="centerY" secondItem="VPD-hB-Umv" secondAttribute="centerY" id="Hum-xD-rzo"/>
+                                            <constraint firstAttribute="centerX" secondItem="3o1-JE-Hst" secondAttribute="centerX" id="N29-wQ-f1B"/>
+                                            <constraint firstAttribute="bottom" secondItem="dEf-hO-HfK" secondAttribute="bottom" constant="30" id="W0t-hL-ejM"/>
+                                            <constraint firstAttribute="trailing" secondItem="KEW-Qg-s6u" secondAttribute="trailing" constant="16" id="kss-Dy-lMr"/>
+                                            <constraint firstItem="KEW-Qg-s6u" firstAttribute="centerX" secondItem="VPD-hB-Umv" secondAttribute="centerX" id="ogY-Kv-yZu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="amO-Et-w9R" firstAttribute="leading" secondItem="aMe-tv-x7a" secondAttribute="leading" id="6TQ-xd-p0j"/>
+                                    <constraint firstItem="amO-Et-w9R" firstAttribute="top" secondItem="aMe-tv-x7a" secondAttribute="top" id="Ljs-H2-1Vd"/>
+                                    <constraint firstAttribute="trailing" secondItem="amO-Et-w9R" secondAttribute="trailing" id="Rd9-Sw-0HH"/>
+                                    <constraint firstAttribute="bottom" secondItem="amO-Et-w9R" secondAttribute="bottom" id="rX7-ek-E5l"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aMe-tv-x7a" secondAttribute="trailing" id="9a8-4Z-lbu"/>
-                            <constraint firstItem="aMe-tv-x7a" firstAttribute="leading" secondItem="QzV-da-GdV" secondAttribute="leading" id="9iu-NW-Ukn"/>
-                            <constraint firstItem="aMe-tv-x7a" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="Bb5-ge-P3U"/>
-                            <constraint firstItem="aMe-tv-x7a" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="JBm-0z-oYi"/>
-                            <constraint firstItem="sIE-nZ-kAM" firstAttribute="top" secondItem="aMe-tv-x7a" secondAttribute="bottom" id="NSZ-CB-Zvy"/>
-                            <constraint firstAttribute="trailing" secondItem="aMe-tv-x7a" secondAttribute="trailing" id="RYB-8F-cyH"/>
-                            <constraint firstItem="aMe-tv-x7a" firstAttribute="leading" secondItem="QzV-da-GdV" secondAttribute="leading" id="VAw-6c-4h3"/>
-                            <constraint firstItem="sIE-nZ-kAM" firstAttribute="top" secondItem="aMe-tv-x7a" secondAttribute="bottom" id="bhh-kn-gcE"/>
-                            <constraint firstAttribute="centerX" secondItem="aMe-tv-x7a" secondAttribute="centerX" id="cj2-Id-0qb"/>
+                            <constraint firstItem="3o1-JE-Hst" firstAttribute="top" secondItem="vxl-go-Hb4" secondAttribute="bottom" constant="105" id="9j3-eQ-hC2"/>
+                            <constraint firstItem="aMe-tv-x7a" firstAttribute="leading" secondItem="QzV-da-GdV" secondAttribute="leading" id="CGR-se-6uQ"/>
+                            <constraint firstAttribute="bottom" secondItem="aMe-tv-x7a" secondAttribute="bottom" id="pOe-kc-AxB"/>
+                            <constraint firstItem="aMe-tv-x7a" firstAttribute="top" secondItem="QzV-da-GdV" secondAttribute="top" id="ttw-j4-Ry7"/>
+                            <constraint firstAttribute="trailing" secondItem="aMe-tv-x7a" secondAttribute="trailing" id="xiB-Ka-RnY"/>
+                            <constraint firstItem="KEW-Qg-s6u" firstAttribute="top" secondItem="vxl-go-Hb4" secondAttribute="bottom" constant="11" id="yTd-Z1-ooT"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="overlayView" destination="amO-Et-w9R" id="gAd-kT-hzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxt-9b-c4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="820"/>
+            <point key="canvasLocation" x="169" y="710"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cast_outline_white.png" width="27" height="21"/>
         <image name="cast_solid.png" width="27" height="21"/>
+        <image name="cast_solid_white.png" width="27" height="21"/>
         <image name="cling.png" width="179" height="179"/>
         <image name="icon_settings_outline_black.png" width="25" height="25"/>
         <image name="play_black.png" width="49" height="49"/>
@@ -526,7 +548,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2aK-Vl-c3F"/>
+        <segue reference="H08-Zb-dfr"/>
         <segue reference="90r-3M-ZWY"/>
     </inferredMetricsTieBreakers>
 </document>
