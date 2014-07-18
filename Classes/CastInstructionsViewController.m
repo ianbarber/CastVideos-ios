@@ -24,14 +24,14 @@ NSString *const kHasSeenChromecastOverlay = @"hasSeenChromecastOverlay";
   bool hasSeenChromecastOverlay = [defaults boolForKey:kHasSeenChromecastOverlay];
 
   // Only show it if we haven't seen it before
-  //if(!hasSeenChromecastOverlay) {
+  if(!hasSeenChromecastOverlay) {
     CastInstructionsViewController *cvc = [[CastInstructionsViewController alloc] init];
     [viewController presentViewController:cvc animated:YES completion:^() {
       // once viewDidAppear is successfully called, mark this preference as viewed
       [defaults setBool:true forKey:kHasSeenChromecastOverlay];
       [defaults synchronize];
     }];
-  //}
+  }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
