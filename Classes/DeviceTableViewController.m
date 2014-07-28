@@ -200,19 +200,19 @@ NSString *const CellIdForDeviceName = @"deviceName";
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager didFailToConnectWithError:(NSError *)error {
-  [deviceManager requestDeviceStatus];
+  NSLog(@">>>>>>>>>>>> %hhd", [deviceManager requestDeviceStatus]);
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager didFailToConnectToApplicationWithError:(NSError *)error {
-  [deviceManager requestDeviceStatus];
+  NSLog(@">>>>>>>>>>>> %hhd", [deviceManager requestDeviceStatus]);
 }
 
 - (void)deviceManagerDidConnect:(GCKDeviceManager *)deviceManager {
-  [deviceManager requestDeviceStatus];
+   NSLog(@">>>>>>>>>>>> %hhd", [deviceManager requestDeviceStatus]);
 }
 
 - (void)deviceManager:(GCKDeviceManager *)deviceManager didReceiveActiveInputStatus:(GCKActiveInputStatus)activeInputStatus {
-  NSLog(@"Got active input");
+  NSLog(@">>>>>>>>>>>> Got active input");
   [deviceManager disconnect];
 }
 
